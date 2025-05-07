@@ -34,6 +34,52 @@ Planned tools and technologies:
 
 ---
 
+## Colour Scheme
+
+I've implemented a global theme using CSS variables. Here's the palette currently in use:
+
+![Colour Palette](./ColourScheme.png)
+
+```css
+:root {
+  --background-colour: #FDFFFC;     /* Ivory White */
+  --text-primary: #2E2E2E;          /* Charcoal Soft Black */
+  --text-secondary: #5A4EBA;        /* Indigo Light */
+  --accent-button: #FFB20F;         /* Amber Gold */
+  --hover-colour: #B5A9E9;          /* Soft Purple */
+  --font-family: 'Inter', sans-serif;
+}
+```
+
+## ✍️ Typography & Spacing System
+
+I'm using a custom typography and spacing system based on a 4px scale and Google Fonts for better consistency and control across the layout.
+
+### Fonts
+- **Headings:** Poppins (600–700 weight)
+- **Body Text:** Inter (400 weight)
+
+### Type Scale
+| Element     | Size     |
+|-------------|----------|
+| H1          | 36–48px  |
+| H2          | 28–32px  |
+| H3          | 22–24px  |
+| Body        | 16–18px  |
+| Small Text  | 14px     |
+
+- **Letter Spacing (Headings):** 0.5px  
+- **Line Height:** 1.2 (headings), 1.5 (body)
+
+### Spacing (4px System)
+```css
+--space-xs: 4px;
+--space-sm: 8px;
+--space-md: 16px;
+--space-lg: 32px;
+--space-xl: 64px;
+```
+
 ## Project Structure (planned)
 
 ```txt

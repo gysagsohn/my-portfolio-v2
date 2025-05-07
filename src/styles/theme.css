@@ -1,16 +1,46 @@
+/* theme.css */
+
+/* Colour Palette */
 :root {
     --background-colour: #FDFFFC;     /* Ivory White */
-    --text-primary: #2E2E2E;           /* Charcoal */
-    --text-secondary: #5A4EBA;         /* Indigo Light */
-    --accent-button: #FFB20F;          /* Amber Gold */
-    --hover-colour: #B5A9E9;           /* Soft Purple */
+    --text-primary: #2E2E2E;          /* Charcoal Soft Black */
+    --text-secondary: #5A4EBA;        /* Indigo Light */
+    --accent-button: #FFB20F;         /* Amber Gold */
+    --hover-colour: #B5A9E9;          /* Soft Purple */
   
-    --font-family: 'Inter', sans-serif;
+    /* Fonts */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  
+    /* Typography Scale */
+    --h1-size: 48px;
+    --h2-size: 32px;
+    --h3-size: 24px;
+    --body-size: 16px;
+    --small-size: 14px;
+  
+    --heading-weight: 700;
+    --body-weight: 400;
+  
+    --heading-spacing: 0.5px;
+    --heading-line-height: 1.2;
+    --body-line-height: 1.5;
+  
+    /* Spacing Scale (4px system) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 64px;
   }
   
+  /* Global Styles */
   body {
     background-color: var(--background-colour);
     color: var(--text-primary);
-    font-family: var(--font-family);
+    font-family: var(--font-body);
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+    margin: 0;
   }
   
