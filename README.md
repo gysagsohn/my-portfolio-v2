@@ -34,6 +34,14 @@ Planned tools and technologies:
 
 ---
 
+## 🔧 Features
+- Fully responsive layout (mobile-first)
+- Global theming using CSS variables
+- Clean typography and consistent spacing system
+- Modular component structure with React
+- Planned blog integration (Markdown or JSX)
+- Styled buttons and interactive hover states
+
 ## Colour Scheme
 
 I've implemented a global theme using CSS variables. Here's the palette currently in use:
@@ -113,18 +121,60 @@ src/
 - Email, LinkedIn, Instagram (also shown in footer)
 - Possibly a contact form or message area
 
+### 4. 404 Page
+- Humorous "Internal Hellfire – Error 666" custom page for unmatched routes
+
+### Button Styles
+
+#### Primary Button
+
+- **Background:** `#FFB20F` (Amber Gold)  
+- **Text Colour:** `#2E2E2E` (Charcoal)  
+- **Hover State:** `#B5A9E9` (Soft Purple)  
+- **Padding:** 12px 24px  
+- **Border Radius:** 8px  
+- **Font:** 16px, Bold  
+
+#### Secondary Button
+
+- **Background:** `#FDFFFC` (Ivory)  
+- **Text Colour:** `#5A4EBA` (Indigo)  
+- **Border:** `1px solid #5A4EBA`  
+- **Hover State:** Text colour changes to `#B5A9E9`  
+- **Font:** 16px, Regular  
+- **Padding:** 12px 24px  
+
+#### Disabled Button
+
+- **Background:** `#E0E0E0`  
+- **Text Colour:** `#A0A0A0`  
+- **Cursor:** `not-allowed`  
+
+#### Transitions
+
+- **Hover:** `all 0.2s ease-in-out`  
+- **Active:** `transform: scale(0.98)`  
+
 
 ## Development Plan
 
 ### Completed
-- Created base project using Vite + React + JavaScript
-- Installed and configured React Router
-- Set up Home, Blog, and Contact routes
-- Implemented basic layout with Header and Footer
-- Applied consistent styling with custom CSS
-- Favicon and browser tab title set
+- Set up Vite + React project
+- Created and structured routes with React Router (Home, Blog, Contact)
+- Designed reusable Header and Footer components
+- Created theme.css for global colours and font
+- Created and applied buttons.css styles
+- Set up typography and spacing system
+- Wrote README with full documentation
+- Tested local routing and layout
+- Set up dev branch for version control
+- Created custom 404 page with lighthearted error message
+- Added SEO meta tags (title, description, author)
+- Added Open Graph and Twitter Card meta tags for social previews
 
 ### In Progress / Next
+- Wireframe design for website
+- Finalise visual design and layout implementation
 - Write and refine content for each section
 - Style each page with responsive layout
 - Add navigation highlights for current route
@@ -133,6 +183,10 @@ src/
 - Finalise animations and transitions (optional)
 - Prepare and push to GitHub
 - Deploy to Netlify
+
+## 🚀 Live Demo
+
+Coming soon – will be deployed to [Netlify](https://www.netlify.com/)
 
 ---
 
