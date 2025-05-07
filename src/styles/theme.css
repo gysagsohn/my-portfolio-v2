@@ -1,0 +1,16 @@
+:root {
+    --background-colour: #FDFFFC;     /* Ivory White */
+    --text-primary: #2E2E2E;           /* Charcoal */
+    --text-secondary: #5A4EBA;         /* Indigo Light */
+    --accent-button: #FFB20F;          /* Amber Gold */
+    --hover-colour: #B5A9E9;           /* Soft Purple */
+  
+    --font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background-color: var(--background-colour);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+  }
+  

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import './styles/theme.css';
+
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: var(--font-family);
+  background-color: var(--background-colour);
+  color: var(--text-primary);
 }
