@@ -155,6 +155,95 @@ src/
 - **Hover:** `all 0.2s ease-in-out`  
 - **Active:** `transform: scale(0.98)`  
 
+## 📐 Wireframes
+
+Wireframes created in Figma to guide responsive layout:
+
+#### Homepage (All Devices)
+- ![Wireframe Home Page](./assets/wireframes/Home/Home Page - Desktop.png)
+- ![Wireframe Home Page - Phone](./assets/wireframes/Tablet%20–%20Homepage%20Frame.png)
+- ![Wireframe Home page - Tablet](./assets/wireframes/Home/Tablet – Homepage Frame.png)
+
+#### Blog Page
+- ![Wireframe Blog Page - Desktop](./assets/wireframes/Phone%20page%20-%20Blog.png)
+- ![Wireframe Blog Page - Tablet](./assets/wireframes/Blog/Blog Page - Tablet.png)
+- ![Wireframe Blog Page - Phone](./assets/wireframes/Blog/Phone page - Blog (1).png)
+
+#### Contact Page
+- ![Wireframe Contact Page - Desktop](./assets/wireframes/Contact/Contact Page - Macbook Pro.png)
+- ![Wireframe Contact Page - Phone](./assets/wireframes/Contact/Phone page - Blog.png)
+---
+
+## 🖱 Hover / Interactive Behaviour (To Code)
+
+### Global Navigation
+- On hover:
+  - Text: `#5A4EBA → #B5A9E9` with fade transition
+  - Underline appears (`transition: all 0.2s ease`)
+- “Back to Top” scrolls smoothly to the top
+
+### Homepage
+
+#### Blog + Project Cards
+- `transform: scale(1.03)`
+- Slight darken background on hover
+- Box shadow: `0px 4px 10px rgba(90, 78, 186, 0.1)`
+
+#### Skills Grid
+- Tooltip with technology label
+- Light border or subtle shadow highlight
+
+#### Timeline Scroll Box (Mobile)
+- Enable vertical scroll: `overflow-y: scroll`
+- Optional: `scroll-snap-type: y mandatory`
+
+### Blog Page
+
+#### Filter Tabs
+- On hover:
+  - Text: white
+  - Background: `#B5A9E9`
+- On click (active):
+  - Animate underline with `transform: scaleX(1)`
+  - Transition: `0.3s background, 0.3s color`
+
+#### Blog Grid Cards
+- Title + description fade in on hover
+- Background tint overlay
+- `cursor: pointer`
+
+### Contact Page
+
+#### Icon Links
+- Hover:
+  - `transform: scale(1.05)`
+  - Colour fades Indigo → Soft Purple
+  - Underline text
+- Click:
+  - `mailto:` for email
+  - `target="_blank"` for LinkedIn and Instagram
+
+### Footer
+- “Back to Top”:
+  - Hover: Indigo → Gold
+  - `cursor: pointer`
+
+---
+
+## 🎨 Bold Card Styling Idea (Experimental)
+
+An optional enhancement idea for visual punch:
+
+- Use bold colour fills instead of light outlines
+- Remove borders and use shadows + spacing
+- On hover:
+  - `filter: brightness(1.05)`
+  - Slight background lift using `transform: translateY(-2px)`
+  - `mix-blend-mode: screen` (optional for glow-like effect)
+- Consider using this style for:
+  - Blog/Project cards
+  - Timeline entries
+  - Contact buttons
 
 ## Development Plan
 
