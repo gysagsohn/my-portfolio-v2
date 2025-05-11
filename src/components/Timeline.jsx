@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import timelineData from '../Data/timelineData';
-import '../styles/TimelineItem.css';
+import '../styles/Timeline.css';
 import TimelineItem from './ui/TimelineItem';
 
 function Timeline() {
@@ -8,11 +8,9 @@ function Timeline() {
   const [atTop, setAtTop] = useState(true);
   const [atBottom, setAtBottom] = useState(false);
 
-  // Scroll position check
   const checkScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
-
     setAtTop(el.scrollTop === 0);
     setAtBottom(el.scrollTop + el.clientHeight >= el.scrollHeight - 1);
   };
@@ -20,8 +18,7 @@ function Timeline() {
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-
-    checkScroll(); // Initial state
+    checkScroll();
     el.addEventListener('scroll', checkScroll);
     return () => el.removeEventListener('scroll', checkScroll);
   }, []);
@@ -59,7 +56,6 @@ function Timeline() {
             description={entry.description}
           />
         ))}
-        {!atBottom && <div className="timeline-fade-bottom" />}
       </div>
     </div>
   );
