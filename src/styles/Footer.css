@@ -1,15 +1,18 @@
 .site-footer {
-  padding: var(--space-md);
-  text-align: center;
   background-color: var(--background-colour);
+  padding: var(--space-md) var(--space-lg);
   border-top: 1px solid #ccc;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.footer-top {
+  text-align: right;
+  margin-bottom: var(--space-sm);
 }
 
 .back-to-top {
-  display: inline-block;
-  margin-bottom: var(--space-sm);
   font-weight: 500;
   color: var(--text-secondary);
   text-decoration: none;
@@ -19,4 +22,9 @@
 .back-to-top:hover {
   color: var(--accent-button);
   text-decoration: underline;
+}
+
+.footer-content {
+  text-align: center;
+  line-height: 1.8;
 }
