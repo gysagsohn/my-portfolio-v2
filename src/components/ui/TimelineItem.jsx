@@ -1,4 +1,4 @@
-import '..//..//styles/TimelineItem.css';
+import '../../styles/TimelineItem.css';
 
 function TimelineItem({ year, title, description }) {
   return (
@@ -12,4 +12,4 @@ function TimelineItem({ year, title, description }) {
   );
 }
 
-export default TimelineItem;
+export default TimelineItem
