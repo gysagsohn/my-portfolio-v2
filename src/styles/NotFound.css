@@ -1,0 +1,35 @@
+.not-found {
+    text-align: center;
+    padding: var(--space-lg);
+    color: var(--text-secondary);
+  }
+  
+  .not-found h1 {
+    font-size: 3rem;
+    color: #FF4500;
+    margin-bottom: var(--space-md);
+  }
+  
+  .not-found p {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .hellfire-icon {
+    font-size: 4rem;
+    animation: flicker 1.5s infinite alternate;
+  }
+  
+  .back-home {
+    display: inline-block;
+    margin-top: var(--space-md);
+    text-decoration: underline;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.05); }
+  }
+  

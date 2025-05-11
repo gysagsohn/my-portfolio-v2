@@ -1,0 +1,48 @@
+/* Base Button Style */
+.button {
+    font-family: var(--font-family);
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  /* 🔸 Primary Button */
+  .button-primary {
+    background-color: var(--accent-button);
+    color: var(--text-primary);
+    border: none;
+    font-weight: bold;
+  }
+  .button-primary:hover {
+    background-color: var(--hover-colour);
+  }
+  .button-primary:active {
+    transform: scale(0.98);
+  }
+  
+  /* 🔹 Secondary Button */
+  .button-secondary {
+    background-color: var(--background-colour);
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+    font-weight: 400;
+  }
+  .button-secondary:hover {
+    color: var(--hover-colour);
+    border-color: var(--hover-colour);
+  }
+  .button-secondary:active {
+    transform: scale(0.98);
+  }
+  
+  /* ⛔ Disabled Button */
+  .button-disabled {
+    background-color: #E0E0E0;
+    color: #A0A0A0;
+    border: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
