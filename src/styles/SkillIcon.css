@@ -1,0 +1,34 @@
+.skill-icon {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.05);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -24px;
+  background: var(--hover-colour);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.skill-icon:hover .tooltip {
+  opacity: 1;
+}
