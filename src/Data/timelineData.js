@@ -12,7 +12,7 @@ const timeline = [
       "Full-stack bootcamp with hands-on projects across the MERN stack — plus Python and SQL for good measure.",
   },
   {
-    year: "2024",
+    year: "2024 — 2024",
     title: "My First Line of Code",
     description:
       "Started coding with CS50 and frontend projects. Switched to a diploma when I realised I needed structure — and that I was all in.",

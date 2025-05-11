@@ -144,3 +144,7 @@
 .timeline-section {
   padding: var(--space-md);
 }
+
+.timeline-wrapper {
+  max-width: 100%;
+}
