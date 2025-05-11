@@ -46,7 +46,7 @@ Planned tools and technologies:
 
 I've implemented a global theme using CSS variables. Here's the palette currently in use:
 
-![Colour Palette](./ColourScheme.png)
+![Colour Palette](./readme-assets/ColourScheme.png)
 
 ```css
 :root {
@@ -160,18 +160,19 @@ src/
 Wireframes created in Figma to guide responsive layout:
 
 #### Homepage (All Devices)
-- ![Wireframe Home Page](./assets/wireframes/Home/Home Page - Desktop.png)
-- ![Wireframe Home Page - Phone](./assets/wireframes/Tablet%20–%20Homepage%20Frame.png)
-- ![Wireframe Home page - Tablet](./assets/wireframes/Home/Tablet – Homepage Frame.png)
+- ![Wireframe Home Page](./readme-assets/wireframes/Home/HomePage_Desktop.png)
+- ![Wireframe Home Page - Phone](./readme-assets/wireframes/Home/HomePage_Phone.png)
+- ![Wireframe Home page - Tablet](./readme-assets/wireframes/Home/HomePage_Tablet.png)
 
 #### Blog Page
-- ![Wireframe Blog Page - Desktop](./assets/wireframes/Phone%20page%20-%20Blog.png)
-- ![Wireframe Blog Page - Tablet](./assets/wireframes/Blog/Blog Page - Tablet.png)
-- ![Wireframe Blog Page - Phone](./assets/wireframes/Blog/Phone page - Blog (1).png)
+- ![Wireframe Blog Page - Desktop](./readme-assets/wireframes/Blog/BlogPage_Desktop.png)
+- ![Wireframe Blog Page - Tablet](./readme-assets/wireframes/Blog/BlogPage_Tablet.png)
+- ![Wireframe Blog Page - Phone](./readme-assets/wireframes/Blog/BlogPage_Phone.png)
 
 #### Contact Page
-- ![Wireframe Contact Page - Desktop](./assets/wireframes/Contact/Contact Page - Macbook Pro.png)
-- ![Wireframe Contact Page - Phone](./assets/wireframes/Contact/Phone page - Blog.png)
+- ![Wireframe Contact Page - Desktop](./readme-assets/wireframes/Contact/ContactPage_Desktop.png)
+- ![Wireframe Contact Page - Phone](./readme-assets/wireframes/Contact/ContactPage_Phone.png)
+- ![Wireframe Contact Page - Tablet](./readme-assets/wireframes/Contact/ContactPage_Tablet.png)
 ---
 
 ## 🖱 Hover / Interactive Behaviour (To Code)
