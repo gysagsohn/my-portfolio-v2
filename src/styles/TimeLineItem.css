@@ -1,0 +1,105 @@
+/* Timeline Container */
+.timeline-wrapper {
+  max-width: 100%;
+  position: relative;
+}
+
+/* Sticky Heading */
+.timeline-heading {
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+  position: sticky;
+  top: 0;
+  background: var(--background-colour);
+  z-index: 2;
+  padding-bottom: var(--space-sm);
+}
+
+/* Scrollable Container */
+.timeline-scroll {
+  position: relative;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: var(--space-sm);
+  scrollbar-width: none; /* Firefox */
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Timeline Item Layout */
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+/* Year (Left Column) */
+.timeline-year {
+  font-weight: bold;
+  width: 13ch;
+  color: var(--accent-button); 
+  font-size: 1rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* Content (Right Column) */
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: var(--space-xs);
+}
+
+/* Title */
+.timeline-title {
+  font-weight: bold;
+  color: var(--text-secondary); 
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Description */
+.timeline-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Scroll Text Links */
+.scroll-up-text,
+.scroll-down-text {
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 3;
+}
+
+/* Scroll Up = bottom left */
+.scroll-up-text {
+  bottom: -16px;
+  left: 0;
+}
+
+/* Scroll Down = top right */
+.scroll-down-text {
+  top: 0;
+  left: 0;
+}
+
+/* Hover Interaction */
+.scroll-up-text:hover,
+.scroll-down-text:hover {
+  color: var(--accent-button);
+  transform: scale(1.05);
+}

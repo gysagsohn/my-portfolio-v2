@@ -1,7 +1,30 @@
 .site-footer {
-  padding: 1rem;
+  background-color: var(--background-colour);
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid #ccc;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.footer-top {
+  text-align: right;
+  margin-bottom: var(--space-sm);
+}
+
+.back-to-top {
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.back-to-top:hover {
+  color: var(--accent-button);
+  text-decoration: underline;
+}
+
+.footer-content {
   text-align: center;
-  background: var(--hover-colour); /* Soft Purple or choose another theme colour */
-  font-size: 0.9rem;
-  color: var(--text-primary); /* Charcoal text */
+  line-height: 1.8;
 }

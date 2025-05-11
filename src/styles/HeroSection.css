@@ -1,0 +1,24 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg);
+  gap: var(--space-sm);
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero-content .tagline {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.hero-image {
+  max-width: 200px;
+  border-radius: 50%;
+  margin-top: var(--space-md);
+}

@@ -4,8 +4,7 @@ import '../styles/Header.css';
 function Header() {
   return (
     <header className="site-header">
-      <h1>Gy Sohn Portfolio v2</h1>
-      <nav>
+      <nav className="navbar-box">
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/contact">Contact</Link>

@@ -1,0 +1,152 @@
+/*Global Layout Styles*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  justify-content: center;
+}
+
+.row > div {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+/*Hero Section */
+.hero-row {
+  align-items: center;
+  text-align: left;
+  padding: var(--space-xl);
+}
+
+.hero-image-block {
+  text-align: center;
+  padding-right: var(--space-lg);
+}
+
+.hero-image {
+  width: 400px;
+  border-radius: 50%;
+  margin-top: var(--space-sm);
+}
+
+.tagline {
+  font-weight: bold;
+  color: var(--accent-button);
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.intro {
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 2rem;
+  margin-top: var(--space-sm);
+}
+
+.wave-icon {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Blog + Project + About */
+.preview-about-row {
+  align-items: flex-start;
+}
+
+.preview-column .preview-title {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.about-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+.about-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.about-text {
+  text-align: left;
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+.about-text.intro-line {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.about-cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.about-cta-group p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* Social Icons (Hero)*/
+.social-icons {
+  margin-top: var(--space-sm);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-start;
+}
+
+.social-icons a {
+  color: var(--text-secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: var(--accent-button);
+  transform: scale(1.1);
+}
+
+/* Skills + Timeline*/
+.skills-timeline-row {
+  align-items: flex-start;
+  padding-bottom: var(--space-xl);
+}
+
+.skills-section,
+.timeline-section {
+  padding: var(--space-md);
+}
+
+.timeline-wrapper {
+  max-width: 100%;
+}
+

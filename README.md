@@ -41,6 +41,9 @@ Planned tools and technologies:
 - Modular component structure with React
 - Planned blog integration (Markdown or JSX)
 - Styled buttons and interactive hover states
+- Dynamic city detection using IP (via `ipapi.co`)
+- Fun animated wave icon next to the greeting
+- Social icon links (email, LinkedIn, Instagram)
 
 ## Colour Scheme
 
@@ -106,7 +109,7 @@ src/
 ### 1. Hero Section
 - Brief introduction with name and role
 - Tagline: *“Ok! Let's do this”*
-- GitHub API box showing contributions
+- Shows user’s city via IP — if you’re from Sydney, I say hi with a complimen
 - Timeline or short “About Me”
 - Highlight 2–3 key projects
 - Skillset section: icons or progress bars

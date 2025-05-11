@@ -1,0 +1,64 @@
+/* Outer Wrapper for Skills Section */
+.skills-wrapper {
+  padding: var(--space-md);
+  width: 100%;
+}
+
+/* Section Heading */
+.center-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+/* Skill Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+/* Each Skill Icon */
+.skill-icon {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: var(--background-colour);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(90, 78, 186, 0.1);
+}
+
+/* Skill Label */
+.skill-icon span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* Skill Icon SVG */
+.skill-icon svg {
+  margin: 0 auto;
+  display: block;
+  color: var(--text-secondary);
+}
+
+.hidden-law {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Reveal when hovering Git */
+.skill-icon.git:hover ~ .hidden-law {
+  opacity: 1;
+  transform: scale(1.1);
+  pointer-events: auto;
+}
