@@ -138,6 +138,7 @@
 /* Skills + Timeline*/
 .skills-timeline-row {
   align-items: flex-start;
+  padding-bottom: var(--space-xl);
 }
 
 .skills-section,
@@ -148,3 +149,4 @@
 .timeline-wrapper {
   max-width: 100%;
 }
+

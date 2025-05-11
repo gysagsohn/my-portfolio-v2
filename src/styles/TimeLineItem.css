@@ -41,7 +41,7 @@
 .timeline-year {
   font-weight: bold;
   width: 13ch;
-  color: var(--accent-button); /* Amber Gold */
+  color: var(--accent-button); 
   font-size: 1rem;
   line-height: 1.4;
   white-space: nowrap;
@@ -60,7 +60,7 @@
 /* Title */
 .timeline-title {
   font-weight: bold;
-  color: var(--text-secondary); /* Indigo */
+  color: var(--text-secondary); 
   font-size: 1.1rem;
   line-height: 1.4;
 }

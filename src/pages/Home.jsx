@@ -95,12 +95,10 @@ function Home() {
       {/* Skills + Timeline Row */}
       <section className="row skills-timeline-row">
         <div className="timeline-section">
-          <h2 className="timeline-heading"> </h2>
           <Timeline />
         </div>
 
         <div className="skills-section">
-          <h2>Tools I Use</h2>
           <Skills />
         </div>
       </section>
