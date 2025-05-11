@@ -1,48 +1,23 @@
-/* Base Button Style */
-.button {
-    font-family: var(--font-family);
-    font-size: 16px;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-  }
-  
-  /* 🔸 Primary Button */
-  .button-primary {
-    background-color: var(--accent-button);
-    color: var(--text-primary);
-    border: none;
-    font-weight: bold;
-  }
-  .button-primary:hover {
-    background-color: var(--hover-colour);
-  }
-  .button-primary:active {
-    transform: scale(0.98);
-  }
-  
-  /* 🔹 Secondary Button */
-  .button-secondary {
-    background-color: var(--background-colour);
-    color: var(--text-secondary);
-    border: 1px solid var(--text-secondary);
-    font-weight: 400;
-  }
-  .button-secondary:hover {
-    color: var(--hover-colour);
-    border-color: var(--hover-colour);
-  }
-  .button-secondary:active {
-    transform: scale(0.98);
-  }
-  
-  /* ⛔ Disabled Button */
-  .button-disabled {
-    background-color: #E0E0E0;
-    color: #A0A0A0;
-    border: none;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-  
+.cta-button {
+  font-family: var(--font-family);
+  font-size: 18px;
+  padding: 14px 28px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+
+  background-color: var(--hover-colour); /* Indigo Light */
+  color: var(--text-primary);              /* Charcoal */
+  border: none;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-button);  /* Amber Gold */
+  color: var(--text-primary);              /* Charcoal stays */
+  transform: scale(1.03);
+}

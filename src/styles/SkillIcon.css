@@ -1,34 +1,32 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
 .skill-icon {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px;
-  padding: 12px;
+  text-align: center;
+  padding: 1rem;
   border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  background-color: var(--background-colour);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .skill-icon:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(90, 78, 186, 0.1);
 }
 
-.tooltip {
-  position: absolute;
-  bottom: -24px;
-  background: var(--hover-colour);
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  white-space: nowrap;
+.skill-icon span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: var(--text-primary);
 }
 
-.skill-icon:hover .tooltip {
-  opacity: 1;
+.skill-icon svg {
+  margin: 0 auto;
+  display: block;
+  color: var(--text-secondary);
 }

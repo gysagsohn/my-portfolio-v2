@@ -1,14 +1,27 @@
 .site-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: var(--hover-colour); /* Soft Purple or change as preferred */
+  justify-content: flex-end;
+  padding: var(--space-sm) var(--space-lg);
 }
 
-.site-header nav a {
-  margin-left: 1rem;
+.navbar-box {
+  display: flex;
+  gap: var(--space-md);
+  background-color: var(--background-colour);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-family);
+}
+
+.navbar-box a {
   text-decoration: none;
-  font-weight: bold;
-  color: var(--text-primary); /* Charcoal */
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-box a:hover {
+  color: var(--hover-colour);
+  text-decoration: underline;
 }

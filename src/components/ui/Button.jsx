@@ -1,14 +1,11 @@
-import '../../styles/buttons.css';
+// src/components/ui/Button.jsx
+import { Link } from 'react-router-dom';
 
-function Button({ type = 'primary', onClick, children }) {
+function Button({ children, link = '#', className = '', ...props }) {
   return (
-    <button
-      className={`button button-${type}`}
-      onClick={type !== 'disabled' ? onClick : undefined}
-      disabled={type === 'disabled'}
-    >
+    <Link to={link} className={className} {...props}>
       {children}
-    </button>
+    </Link>
   );
 }
 
