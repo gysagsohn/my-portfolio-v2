@@ -1,18 +1,10 @@
 .timeline-wrapper {
+  padding: var(--space-md);
   max-width: 100%;
   position: relative;
 }
 
-.timeline-heading {
-  font-size: 2rem;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-xs);
-  position: sticky;
-  top: 0;
-  background: var(--background-colour);
-  z-index: 2;
-  padding-bottom: var(--space-sm);
-}
+/* Removed .timeline-heading — it’s now controlled by parent via .section-heading */
 
 .timeline-scroll {
   position: relative;
@@ -20,6 +12,7 @@
   overflow-y: auto;
   padding-right: var(--space-sm);
   scrollbar-width: none;
+  margin-top: var(--space-lg)
 }
 
 .timeline-scroll::-webkit-scrollbar {
@@ -40,12 +33,12 @@
 
 .scroll-up-text {
   bottom: -16px;
-  left: 0;
+  left: 1;
 }
 
 .scroll-down-text {
-  top: 0;
-  left: 0;
+  top: var(--space-md); /* Feels visually balanced now */
+  left: 1;
 }
 
 .scroll-up-text:hover,

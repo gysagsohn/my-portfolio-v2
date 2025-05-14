@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { blogPosts } from '../Data/blogData';
 import { projects } from '../Data/projectData';
+import { socialLinks } from '../Data/socialLinks';
 import logo from '../assets/logo.png';
 import PostCard from '../components/PostCard';
 import Skills from '../components/Skills';
@@ -33,7 +34,7 @@ function Home() {
   return (
     <main className="home-page">
       {/* Hero Row */}
-      <section className="row hero-row">
+      <section className="row hero-row" id="hero">
         <div className="hero-image-block">
           <p className="tagline">Ok! Let's do this</p>
           <img src={logo} alt="Gy Sohn smiling with sunglasses" className="hero-image" />
@@ -51,13 +52,13 @@ function Home() {
             I’m coding from Sydney
           </p>
           <div className="social-icons">
-            <a href="mailto:gysagsohn@hotmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+            <a href={socialLinks.email.url} aria-label={socialLinks.email.iconLabel} target="_blank" rel="noopener noreferrer">
               <FaEnvelope size={28} />
             </a>
-            <a href="https://www.linkedin.com/in/gysagsohn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href={socialLinks.linkedin.url} aria-label={socialLinks.linkedin.iconLabel} target="_blank" rel="noopener noreferrer">
               <FaLinkedin size={28} />
             </a>
-            <a href="https://www.instagram.com/gysagsohn/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href={socialLinks.instagram.url} aria-label={socialLinks.instagram.iconLabel} target="_blank" rel="noopener noreferrer">
               <FaInstagram size={28} />
             </a>
           </div>
@@ -95,10 +96,12 @@ function Home() {
       {/* Skills + Timeline Row */}
       <section className="row skills-timeline-row">
         <div className="timeline-section">
+          <h2 className="section-heading">My Journey</h2>
           <Timeline />
         </div>
 
         <div className="skills-section">
+          <h2 className="section-heading">Tools I Use</h2>
           <Skills />
         </div>
       </section>

@@ -31,10 +31,9 @@ function Timeline() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
   };
 
+
   return (
     <div className="timeline-wrapper">
-      <h2 className="timeline-heading">My Journey</h2>
-
       {!atTop && (
         <span className="scroll-up-text" onClick={scrollToTop}>
           Scroll up ↑

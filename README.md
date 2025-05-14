@@ -2,6 +2,12 @@
 
 Welcome to the version 2 of my personal developer portfolio website. This project is a ground-up rebuild focused on improving visual design, interactivity, and showcasing my growth as a full-stack developer.
 
+## Live Site
+You can visit the live version of this portfolio at
+🌐 https://gysohn.com/
+
+Heads up: it’s still under construction — kind of like a dev site with a hard hat on. Improvements are ongoing, so things may look half-painted (intentionally).
+
 ## Project Purpose
 
 The goal of this portfolio is to:
@@ -9,6 +15,14 @@ The goal of this portfolio is to:
 - Share a short bio and my career transition journey.
 - Create an interactive, well-designed digital space that reflects who I am as a developer.
 - Optionally include a blog or insights section in the future.
+
+## My First-Ever Portfolio Website
+Built with just HTML and CSS, this was my introduction to web dev—and my attempt to make Comic Sans cool again (don’t worry, I didn’t actually use it).
+
+Live Site (v1) (https://gysohn-v1.netlify.app/)
+Source Code (https://github.com/gysagsohn/gysohn_T1A2)
+
+It’s simple, nostalgic, and a reminder of how far things have come (and how many divs I’ve closed since).
 
 ---
 
