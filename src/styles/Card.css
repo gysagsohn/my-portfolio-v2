@@ -5,6 +5,10 @@
   overflow: hidden;
   transition: transform 0.2s ease, background 0.2s ease;
   cursor: pointer;
+  margin: var(--space-sm);
+  flex: 1 1 300px;
+  max-width: 400px;
+ 
 }
 
 .card:hover {

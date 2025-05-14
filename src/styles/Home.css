@@ -75,6 +75,14 @@
   color: var(--text-secondary);
 }
 
+.preview-column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
 .about-section {
   max-width: 600px;
   margin: 0 auto;
@@ -135,14 +143,21 @@
   transform: scale(1.1);
 }
 
-/* Skills + Timeline*/
+/* Skills + Timeline */
 .skills-timeline-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-start;
+  gap: var(--space-lg);
   padding-bottom: var(--space-xl);
 }
 
 .skills-section,
 .timeline-section {
+  flex: 1 1 42%;
+  max-width: 48%;
+  min-width: 300px;
   padding: var(--space-md);
 }
 
@@ -150,3 +165,10 @@
   max-width: 100%;
 }
 
+/* Shared Section Heading Style */
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}

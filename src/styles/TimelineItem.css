@@ -35,3 +35,10 @@
   line-height: 1.5;
   color: var(--text-primary);
 }
+
+.timeline-wrapper {
+  padding: var(--space-md);
+}
+.timeline-heading {
+  text-align: center;
+}

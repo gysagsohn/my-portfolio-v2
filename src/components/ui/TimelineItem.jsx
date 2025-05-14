@@ -1,4 +1,4 @@
-import '../../styles/TimelineItem1.css';
+import '../../styles/TimelineItem.css';
 
 function TimelineItem({ year, title, description }) {
   return (
