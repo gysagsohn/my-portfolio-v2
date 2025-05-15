@@ -2,7 +2,6 @@ import { Hand } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { blogPosts } from '../Data/blogData';
-import { projects } from '../Data/projectData';
 import { socialLinks } from '../Data/socialLinks';
 import logo from '../assets/logo.png';
 import PostCard from '../components/PostCard';
@@ -13,6 +12,8 @@ import '../styles/Home.css';
 
 function Home() {
   const [city, setCity] = useState(null);
+
+   // Fetch user's city using IP-based geolocation
 
   useEffect(() => {
     fetch('https://ipapi.co/json/')
@@ -25,11 +26,22 @@ function Home() {
       });
   }, []);
 
+  // Return a personalised message for the city
   const renderLocation = () => {
     if (!city) return '...';
     if (city.toLowerCase() === 'sydney') return 'Sydney, hard to beat!';
     return city;
   };
+
+    //Step 2: Sort blogPosts by date (newest first)
+    const sortedPosts = [...blogPosts].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+
+
+    //Grab the most recent blog and project based on slug logic
+    const latestBlog = sortedPosts.find(post => !post.slug.includes('projects'));
+    const latestProject = sortedPosts.find(post => post.slug.includes('projects'));
 
   return (
     <main className="home-page">
@@ -68,11 +80,9 @@ function Home() {
       {/* Blog + Project + About Row */}
       <section className="row preview-about-row">
         <div className="preview-column">
-          <h2 className="preview-title">Latest Blog</h2>
-          <PostCard {...blogPosts[0]} />
-
-          <h2 className="preview-title">Latest Project</h2>
-          <PostCard {...projects[0]} />
+          {/* <h2 className="preview-title">Latest Blog</h2> */}
+          <PostCard {...latestBlog} />
+          <PostCard {...latestProject} />
         </div>
 
         <div className="about-section">

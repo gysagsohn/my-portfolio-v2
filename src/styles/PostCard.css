@@ -1,38 +1,101 @@
+/* PostCard.css – themed version */
+
 .post-card {
   position: relative;
-  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--space-sm);
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
+  display: block;
+  max-width: 300px;
+  animation: floatHint 3s ease-in-out infinite alternate;
+  background-color: var(--background-colour);
+}
+
+@keyframes floatHint {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.015);
+  }
 }
 
 .post-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
 .post-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(90, 78, 186, 0.8);
-  color: white;
-  padding: 1rem;
+  inset: 0;
+  background: rgba(90, 78, 186, 0.85); /* You can make this a --overlay-bg if reused */
+  color: var(--background-colour);
+  padding: var(--space-md);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* transition: opacity 0.3s ease; */
+  transform: scale(0.98);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .post-card:hover .post-overlay {
   opacity: 1;
+  transform: scale(1);
 }
 
-.post-overlay h4 {
-  margin: 0 0 0.5rem;
+.post-overlay h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--h3-size);
+  font-family: var(--font-heading);
+  letter-spacing: var(--heading-spacing);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-weight);
+}
+
+.post-overlay p {
+  margin: var(--space-xs) 0;
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  font-family: var(--font-body);
+  font-weight: var(--body-weight);
 }
 
 .read-more {
-  font-size: 0.85rem;
-  opacity: 0.9;
+  font-weight: var(--heading-weight);
+  font-size: var(--small-size);
+  margin-top: var(--space-sm);
 }
+
+.hover-hint {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-secondary);
+  font-size: var(--small-size);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--space-xs);
+  pointer-events: none;
+  font-weight: var(--body-weight);
+  transition: opacity 0.3s ease;
+}
+
+.post-card:hover .hover-hint {
+  opacity: 0;
+}
+
+
+/* .post-card:focus-within .post-overlay {
+  opacity: 1;
+  transform: scale(1);
+  outline: 2px solid var(--accent-button);
+} */
