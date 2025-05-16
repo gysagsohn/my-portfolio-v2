@@ -1,0 +1,90 @@
+.contact-page {
+  text-align: center;
+  margin:var(--space-xl) auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.contact-heading {
+  font-size: var(--h2-size);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  margin: 0 auto var(--space-xl);
+}
+
+.contact-intro {
+  font-size: var(--body-size);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  line-height: var(--body-line-height);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.contact-item:hover .icon {
+  transform: scale(1.05);
+}
+
+.copy-text {
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.contact-item:hover .copy-text {
+  color: var(--accent-button);
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: var(--space-xs);
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.copy-btn:hover {
+  transform: scale(1.1);
+  color: var(--accent-button);
+}
+
+.copied-icon {
+  color: var(--accent-button);
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.icon {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+}
