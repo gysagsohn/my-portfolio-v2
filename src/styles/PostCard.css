@@ -74,28 +74,3 @@
   font-size: var(--small-size);
   margin-top: var(--space-sm);
 }
-
-.hover-hint {
-  position: absolute;
-  top: var(--space-sm);
-  left: var(--space-sm);
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--text-secondary);
-  font-size: var(--small-size);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--space-xs);
-  pointer-events: none;
-  font-weight: var(--body-weight);
-  transition: opacity 0.3s ease;
-}
-
-.post-card:hover .hover-hint {
-  opacity: 0;
-}
-
-
-/* .post-card:focus-within .post-overlay {
-  opacity: 1;
-  transform: scale(1);
-  outline: 2px solid var(--accent-button);
-} */
