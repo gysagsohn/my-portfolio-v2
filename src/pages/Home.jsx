@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import { Typewriter } from 'react-simple-typewriter';
 import { blogPosts } from '../Data/blogData';
 import { socialLinks } from '../Data/socialLinks';
 import logo from '../assets/logo.png';
@@ -13,34 +13,33 @@ import '../styles/Home.css';
 function Home() {
   const [city, setCity] = useState(null);
   const [showSocials, setShowSocials] = useState(false);
-
-  const [text] = useTypewriter({
-    words: [
-      "I'm Gy Sohn",
-      'Based in Sydney',
-      'React, Node & Beyond',
-      'Let’s build something cool',
-      'Ex-Lawyer Turned Coder'
-    ],
-    loop: true,
-    delaySpeed: 2000,
-  });
+  const [showLine1, setShowLine1] = useState(false);
+  const [showLine2, setShowLine2] = useState(false);
+  const [showLine3, setShowLine3] = useState(false);
+  const [showLine4, setShowLine4] = useState(false);
 
   useEffect(() => {
     fetch('https://ipapi.co/json/')
-      .then((res) => res.json())
-      .then((data) => {
-        setCity(data.city || 'your corner of the internet');
-      })
-      .catch(() => {
-        setCity('somewhere mysterious');
-      });
+      .then(res => res.json())
+      .then(data => setCity(data.city || 'your corner of the internet'))
+      .catch(() => setCity('somewhere mysterious'));
+  }, []);
+
+  useEffect(() => {
+    setShowLine1(true);
+    const timer2 = setTimeout(() => setShowLine2(true), 1800);
+    const timer3 = setTimeout(() => setShowLine3(true), 3600);
+    const timer4 = setTimeout(() => setShowLine4(true), 5400);
+    return () => {
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
+    };
   }, []);
 
   const renderLocation = () => {
     if (!city) return '...';
-    if (city.toLowerCase() === 'sydney') return 'Sydney, hard to beat!';
-    return city;
+    return city.toLowerCase() === 'sydney' ? 'Sydney, hard to beat!' : city;
   };
 
   const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -49,21 +48,38 @@ function Home() {
 
   return (
     <main className="home-page">
-      {/* Hero Row */}
       <section className="row hero-row" id="hero">
         <div className="hero-image-block">
           <p className="tagline">Ok! Let's do this</p>
           <img src={logo} alt="Gy Sohn smiling with sunglasses" className="hero-image" />
         </div>
+
         <div className="hero-text">
           <p className="subheading">Hi, I'm a Full Stack Developer</p>
-          <h1 className="typewriter-line">
-            {text}
-            <Cursor cursorStyle="|" />
-          </h1>
-          <p className="intro">
-            You’re visiting from {renderLocation()}
-          </p>
+          <div className="typewriter-group">
+            {showLine1 && (
+              <p className="typewriter-line">
+                <Typewriter words={["I'm Gy Sohn"]} typeSpeed={50} cursor={false} />
+              </p>
+            )}
+            {showLine2 && (
+              <p className="typewriter-line">
+                <Typewriter words={["Based in Sydney"]} typeSpeed={50} cursor={false} />
+              </p>
+            )}
+            {showLine3 && (
+              <p className="typewriter-line">
+                <Typewriter words={["React, Node & Beyond"]} typeSpeed={50} cursor={false} />
+              </p>
+            )}
+            {showLine4 && (
+              <p className="typewriter-line">
+                <Typewriter words={["Ex-Lawyer Turned Coder"]} typeSpeed={50} cursor={false} />
+              </p>
+            )}
+          </div>
+
+          <p className="intro">You’re visiting from {renderLocation()}</p>
 
           <div className="cta-buttons">
             <Button link="/blog" className="cta-button">View My Work</Button>
@@ -83,10 +99,12 @@ function Home() {
               </a>
             </div>
           )}
+
+          <span className="scroll-down-indicator">↓</span>
         </div>
       </section>
 
-      {/* Blog + Project + About Row */}
+      {/* Blog + Project + About */}
       <section className="row preview-about-row">
         <div className="preview-column">
           <PostCard {...latestBlog} />
@@ -107,7 +125,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Skills + Timeline Row */}
+      {/* Skills + Timeline */}
       <section className="row skills-timeline-row">
         <div className="timeline-section">
           <h2 className="section-heading">My Journey</h2>
