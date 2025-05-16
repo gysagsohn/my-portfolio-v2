@@ -13,20 +13,22 @@
 
 /* === Hero Section === */
 .hero-row {
+  display: flex;
   align-items: center;
+  justify-content: center;
   text-align: left;
-  padding: var(--space-md) 0 var(--space-xl);
+  padding: var(--space-md) 0;
+  min-height: 85vh;
+  position: relative;
 }
 
-/* Container to manage clean vertical rhythm */
 .hero-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-sm); /* Adds consistent vertical spacing */
+  gap: var(--space-sm);
 }
 
-/* Left column: image */
 .hero-image-block {
   text-align: center;
   padding-right: var(--space-lg);
@@ -38,28 +40,34 @@
   object-fit: cover;
   border-radius: 50%;
   border: 10px solid var(--text-primary);
-  background-color: var(--accent-button); /* fills transparent gap with amber */
+  background-color: var(--accent-button);
 }
 
-/* Top tagline */
 .tagline {
   font-size: 2rem;
   font-weight: bold;
   color: var(--text-secondary);
   margin: 0;
+  font-family: var(--font-heading);
 }
 
-/* Subheading above typing text */
 .subheading {
-  font-size: var(--h2-size); /* Larger than before */
+  font-size: var(--h2-size);
   font-family: var(--font-heading);
   font-weight: var(--heading-weight);
   color: var(--text-primary);
   margin: 0;
 }
 
-/* Typing animation text (e.g. "I'm Gy Sohn") */
-.hero-text h1 {
+/* Container for multiple typewriter lines */
+.typewriter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+.typewriter-line {
   font-size: 3rem;
   font-family: var(--font-heading);
   font-weight: var(--heading-weight);
@@ -67,29 +75,11 @@
   margin: 0;
 }
 
-/* Location text */
 .intro {
   max-width: 600px;
   font-size: 2rem;
   line-height: 1.6;
   margin: 0;
-}
-
-/* Waving hand icon */
-.wave-icon {
-  display: inline-block;
-  transform-origin: 70% 70%;
-  animation: wave 2s infinite;
-}
-
-@keyframes wave {
-  0%   { transform: rotate(0deg); }
-  15%  { transform: rotate(14deg); }
-  30%  { transform: rotate(-8deg); }
-  45%  { transform: rotate(14deg); }
-  60%  { transform: rotate(-4deg); }
-  75%  { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
 }
 
 /* === CTA Buttons === */
@@ -140,6 +130,23 @@
   }
 }
 
+/* === Scroll Down Arrow === */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: var(--text-secondary);
+  animation: bounce 1.8s infinite ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
 /* === Blog + Project + About Section === */
 .preview-about-row {
   align-items: flex-start;
@@ -158,7 +165,6 @@
   color: var(--text-secondary);
 }
 
-/* === About Section === */
 .about-section {
   max-width: 600px;
   margin: 0 auto;
@@ -198,6 +204,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   color: var(--text-secondary);
+  font-family: var(--font-heading);
 }
 
 /* === Social Icons (in Hero) === */

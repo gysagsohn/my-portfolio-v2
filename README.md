@@ -1,6 +1,6 @@
 # Gy Sohn – Portfolio Website (v2)
 
-Welcome to the version 2 of my personal developer portfolio website. This project is a ground-up rebuild focused on improving visual design, interactivity, and showcasing my growth as a full-stack developer.
+Welcome to the version 2 of my personal developer portfolio website. This project is a ground-up rebuild focused on improving visual design, interactivity, and showcasing my growth as a full-stack developer. This site is a fully client-rendered React SPA using React Router, modular components, and a global theme layer built in CSS.
 
 ## Live Site
 You can visit the live version of this portfolio at
@@ -121,12 +121,16 @@ src/
 ## Planned Content
 
 ### 1. Hero Section
-- Brief introduction with name and role
-- Tagline: *“Ok! Let's do this”*
-- Shows user’s city via IP — if you’re from Sydney, I say hi with a complimen
-- Timeline or short “About Me”
-- Highlight 2–3 key projects
-- Skillset section: icons or progress bars
+- Bold tagline: *“Ok! Let's do this”*
+- Static intro line: *“Hi, I'm a Full Stack Developer”*
+- Typing animation featuring phrases like:
+  - "I'm Gy Sohn"
+  - "Based in Sydney"
+  - "React, Node & Beyond"
+  - "Let’s build something cool"
+  - "Ex-Lawyer Turned Coder"
+- IP-based city greeting (e.g. “You’re visiting from Brisbane”)
+- Clean buttons for work/contact
 
 ### 2. Blog Page
 - Overview of my career: Law → Construction → Software
