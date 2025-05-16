@@ -1,9 +1,37 @@
 .site-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: var(--space-sm) var(--space-lg);
 }
 
+/* Logo / Brand */
+.header-left .logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  transition: color 0.2s ease-in-out;
+}
+
+.logo:hover {
+  color: var(--accent-button);
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s ease-in-out;
+}
+
+.dark-toggle:hover {
+  color: var(--accent-button);
+}
 .navbar-box {
   display: flex;
   gap: var(--space-md);

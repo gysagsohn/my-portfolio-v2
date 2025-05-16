@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../styles/Header.css';
 
 const navItems = [
@@ -10,6 +10,9 @@ const navItems = [
 function Header() {
   return (
     <header className="site-header">
+      <div className="header-left">
+        <Link to="/" className="logo">~GySohn</Link>
+      </div>
       <nav className="navbar-box">
         {navItems.map(({ name, to }) => (
           <NavLink
@@ -22,10 +25,12 @@ function Header() {
             {name}
           </NavLink>
         ))}
+        <button className="dark-toggle" aria-label="Toggle dark mode">
+          🌓
+        </button>
       </nav>
     </header>
   );
 }
-
 
 export default Header;
