@@ -1,4 +1,4 @@
-/*Global Layout Styles*/
+/* === Global Layout Styles === */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -11,13 +11,22 @@
   min-width: 300px;
 }
 
-/*Hero Section */
+/* === Hero Section === */
 .hero-row {
   align-items: center;
   text-align: left;
-  padding: var(--space-xl);
+  padding: var(--space-md) 0 var(--space-xl);
 }
 
+/* Container to manage clean vertical rhythm */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm); /* Adds consistent vertical spacing */
+}
+
+/* Left column: image */
 .hero-image-block {
   text-align: center;
   padding-right: var(--space-lg);
@@ -25,30 +34,48 @@
 
 .hero-image {
   width: 400px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 50%;
-  margin-top: var(--space-sm);
+  border: 10px solid var(--text-primary);
+  background-color: var(--accent-button); /* fills transparent gap with amber */
 }
 
+/* Top tagline */
 .tagline {
-  font-weight: bold;
-  color: var(--accent-button);
   font-size: 2rem;
-  margin-bottom: var(--space-sm);
+  font-weight: bold;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
+/* Subheading above typing text */
+.subheading {
+  font-size: var(--h2-size); /* Larger than before */
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Typing animation text (e.g. "I'm Gy Sohn") */
 .hero-text h1 {
   font-size: 3rem;
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
   color: var(--text-secondary);
-  margin-bottom: var(--space-sm);
+  margin: 0;
 }
 
+/* Location text */
 .intro {
   max-width: 600px;
-  line-height: 1.6;
   font-size: 2rem;
-  margin-top: var(--space-sm);
+  line-height: 1.6;
+  margin: 0;
 }
 
+/* Waving hand icon */
 .wave-icon {
   display: inline-block;
   transform-origin: 70% 70%;
@@ -56,18 +83,74 @@
 }
 
 @keyframes wave {
-  0% { transform: rotate(0deg); }
-  15% { transform: rotate(14deg); }
-  30% { transform: rotate(-8deg); }
-  45% { transform: rotate(14deg); }
-  60% { transform: rotate(-4deg); }
-  75% { transform: rotate(10deg); }
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(14deg); }
+  30%  { transform: rotate(-8deg); }
+  45%  { transform: rotate(14deg); }
+  60%  { transform: rotate(-4deg); }
+  75%  { transform: rotate(10deg); }
   100% { transform: rotate(0deg); }
 }
 
-/* Blog + Project + About */
+/* === CTA Buttons === */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.cta-button-outline {
+  font-family: var(--font-body);
+  font-size: 18px;
+  padding: 14px 28px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 2px solid var(--text-secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.cta-button-outline:hover {
+  background-color: var(--hover-colour);
+  color: var(--text-primary);
+  border-color: var(--accent-button);
+}
+
+/* === Contact Icons Reveal === */
+.contact-icons {
+  justify-content: center;
+  margin-top: var(--space-sm);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Blog + Project + About Section === */
 .preview-about-row {
   align-items: flex-start;
+}
+
+.preview-column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .preview-column .preview-title {
@@ -75,14 +158,7 @@
   color: var(--text-secondary);
 }
 
-.preview-column {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  gap: var(--space-md);
-  margin-bottom: var(--space-lg);
-}
-
+/* === About Section === */
 .about-section {
   max-width: 600px;
   margin: 0 auto;
@@ -106,8 +182,7 @@
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-sm);
+  margin: var(--space-sm) 0;
 }
 
 .about-cta-group {
@@ -125,7 +200,7 @@
   color: var(--text-secondary);
 }
 
-/* Social Icons (Hero)*/
+/* === Social Icons (in Hero) === */
 .social-icons {
   margin-top: var(--space-sm);
   display: flex;
@@ -143,7 +218,7 @@
   transform: scale(1.1);
 }
 
-/* Skills + Timeline */
+/* === Skills + Timeline Section === */
 .skills-timeline-row {
   display: flex;
   flex-wrap: wrap;
@@ -165,7 +240,7 @@
   max-width: 100%;
 }
 
-/* Shared Section Heading Style */
+/* === Shared Headings === */
 .section-heading {
   text-align: center;
   font-size: 2rem;
