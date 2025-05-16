@@ -50,7 +50,8 @@ function Blog() {
             title={post.title}
             summary={post.summary}
             image={post.image}
-            link={post.slug}
+            slug={post.slug} 
+            date={post.date}
           />
         ))}
       </section>
