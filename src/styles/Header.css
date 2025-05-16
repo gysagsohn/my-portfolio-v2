@@ -21,7 +21,23 @@
   transition: color 0.2s ease-in-out;
 }
 
-.navbar-box a:hover {
-  color: var(--hover-colour);
-  text-decoration: underline;
+.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  /* border-radius: 8px; */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* On hover */
+.nav-link:hover {
+  color: var(--accent-button); /* Gold on hover */
+  background-color: transparent; /* Ensure no background */
+}
+
+.nav-link.active {
+  color: var(--accent-button);
+  font-weight: 600;
+  background-color: transparent;
 }
