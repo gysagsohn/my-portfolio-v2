@@ -1,89 +1,112 @@
+// BlogPostPage.jsx
 import { useState } from 'react';
-import { FaLink, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaLink, FaLinkedin, FaShareAlt, FaTwitter } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { blogPosts } from '../Data/blogData';
 import '../styles/BlogPostPage.css';
 
 function BlogPostPage() {
-  // Get the slug from the route URL
+  // Get slug from route parameter (e.g. blog/career-switch)
   const { slug } = useParams();
 
-  // Find the post that matches the slug
+  // Find the corresponding blog post based on slug
   const post = blogPosts.find((p) => p.slug === slug);
 
-  // For "Copy link" feedback
-  const [copied, setCopied] = useState(false);
+  // State for "copied" toast + share menu toggle
+  const [copied, setCopied] = useState('');
+  const [showMenu, setShowMenu] = useState(false);
 
-  // If no matching post found
   if (!post) {
     return <p className="not-found-message">Post not found</p>;
   }
 
-  // When user clicks copy link button
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Clear feedback after 2 sec
+  // Create base shareable content
+  const url = window.location.href;
+  const message = `I just read "${post.title}" by an up-and-coming coder — check it out!`;
+  const encodedURL = encodeURIComponent(url);
+  const encodedMessage = encodeURIComponent(message);
+
+  // Handler: Copy either the link or message+link to clipboard
+  const handleCopy = (type) => {
+    const textToCopy = type === 'message' ? `${message}\n${url}` : url;
+    navigator.clipboard.writeText(textToCopy);
+    setCopied(type);
+    setTimeout(() => setCopied(''), 2000); // Reset toast
   };
 
   return (
     <main className="blog-post-page-container">
-      {/* Sidebar with share buttons */}
-      <aside className="sticky-share-bar">
-        {/* Twitter */}
-        <a
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${window.location.href}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Share on Twitter"
-          title="Share on Twitter"
-        >
-          <FaTwitter size={20} />
-        </a>
-
-        {/* LinkedIn */}
-        <a
-          href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}&title=${encodeURIComponent(post.title)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Share on LinkedIn"
-          title="Share on LinkedIn"
-        >
-          <FaLinkedin size={20} />
-        </a>
-
-        {/* Copy to clipboard */}
-        <button
-          onClick={handleCopyLink}
-          className="copy-link-button"
-          aria-label="Copy post URL"
-          title="Copy link"
-        >
-          <FaLink size={20} />
-          {copied && <span className="copied-toast">Copied!</span>}
-        </button>
-      </aside>
-
-      {/* Main blog content */}
+      {/* Main article content */}
       <article className="blog-post">
-        {/* Link back to blog home */}
         <Link to="/blog" className="back-to-blog">← Back to Blog</Link>
-
-        {/* Blog heading */}
         <h1 className="blog-post-title">{post.title}</h1>
-
-        {/* Short intro/summary under heading */}
         <p className="blog-post-summary">{post.summary}</p>
-
-        {/* Blog image (resized and styled) */}
         <img src={post.image} alt={post.title} className="blog-post-image" />
-
-        {/* Main blog body HTML content */}
         <div
           className="blog-post-body"
           dangerouslySetInnerHTML={{ __html: post.body }}
         />
       </article>
+
+      {/* Sticky share menu */}
+      <aside className="sticky-share-bar">
+        <button
+          className="share-toggle"
+          onClick={() => setShowMenu(!showMenu)}
+          aria-label="Toggle share menu"
+          title="Share"
+        >
+          <FaShareAlt size={20} />
+        </button>
+
+        {showMenu && (
+          <div className="share-menu">
+            {/* Option: Copy plain URL */}
+            <button
+              onClick={() => handleCopy('link')}
+              className="copy-link-button"
+              aria-label="Copy link only"
+              title="Copy link"
+            >
+              <FaLink size={18} /> Copy Link
+              {copied === 'link' && <span className="copied-toast">Copied!</span>}
+            </button>
+
+            {/* Option: Copy pre-filled message */}
+            <button
+              onClick={() => handleCopy('message')}
+              className="copy-link-button"
+              aria-label="Copy message"
+              title="Copy message + link"
+            >
+              <FaLink size={18} /> Copy Message
+              {copied === 'message' && <span className="copied-toast">Copied!</span>}
+            </button>
+
+            {/* LinkedIn share */}
+            <a
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedURL}&title=${encodedMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on LinkedIn"
+              title="Share on LinkedIn"
+            >
+              <FaLinkedin size={18} /> LinkedIn
+            </a>
+
+            {/* Twitter share */}
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodedMessage}&url=${encodedURL}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on Twitter"
+              title="Share on Twitter"
+            >
+              <FaTwitter size={18} /> Twitter
+            </a>
+          </div>
+        )}
+      </aside>
     </main>
   );
 }
