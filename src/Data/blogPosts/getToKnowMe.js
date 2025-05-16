@@ -6,6 +6,7 @@ export const getToKnowMe = {
   image: getToKnowMeImage,
   slug: "get-to-know-me",
   date: "2024-05-13",
+  type: "blog",
   body: `
     <h2>Let’s break the fourth wall for a minute.</h2>
 

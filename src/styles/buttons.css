@@ -21,3 +21,28 @@
   color: var(--text-primary);              /* Charcoal stays */
   transform: scale(1.03);
 }
+
+/* Mini version of the CTA button */
+.mini-button {
+  font-family: var(--font-family);
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+
+  background-color: var(--hover-colour); /* Indigo */
+  color: var(--text-primary);            /* Charcoal */
+  border: none;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.mini-button:hover {
+  background-color: var(--accent-button); /* Amber */
+  color: var(--text-primary);
+  transform: scale(1.05);
+}

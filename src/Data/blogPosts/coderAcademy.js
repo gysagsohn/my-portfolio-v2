@@ -7,6 +7,7 @@ export const coderAcademy = {
   image: coderAcademyImage,
   slug: "coder-bootcamp",
   date: "2024-05-14",
+  type: "blog",
   body: `
     <h2>Why I Signed Up</h2>
     <p>After nearly a decade in law and construction, I wanted something different. I needed flexibility, intellectual challenge, and a future-friendly career. Tech ticked all the boxes. I’d already started dabbling with CS50 and realised software engineering could be the leap I was looking for. I enrolled in Coder Academy with a plan, a full-time job, and just enough confidence to think I could do both.</p>

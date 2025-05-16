@@ -5,8 +5,9 @@ export const readyGroupHandbook = {
   title: "Project Spotlight: Ready Group Induction Handbook",
   summary: "A look at the digital handbook I built — what it is, why I made it, what I learned, and what’s coming next.",
   image: readyGroupHandbookImage,
-  slug: "projects/induction-handbook",
+  slug: "induction-handbook",
   date: "2024-05-15",
+  type: "project",
   body: `
     <h2>What I Built</h2>
     <p>This is a frontend-only employee induction handbook for Ready Group. Think of it as a clean, easy-to-navigate internal site (similar to AirMason) that walks new hires through company values, policies, leadership, and more.</p>

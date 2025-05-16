@@ -40,9 +40,9 @@ function Home() {
 
 
     //Grab the most recent blog and project based on slug logic
-    const latestBlog = sortedPosts.find(post => !post.slug.includes('projects'));
-    const latestProject = sortedPosts.find(post => post.slug.includes('projects'));
-
+    const latestBlog = sortedPosts.find(post => post.type === 'blog');
+    const latestProject = sortedPosts.find(post => post.type === 'project');
+    
   return (
     <main className="home-page">
       {/* Hero Row */}

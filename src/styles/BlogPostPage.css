@@ -11,7 +11,7 @@
 .blog-post-image {
   display: block;
   max-width: 60%;
-  align-content: center;
+
   height: auto;
   margin: var(--space-sm) auto var(--space-lg); /* top/center/bottom */
   border-radius: var(--space-sm);

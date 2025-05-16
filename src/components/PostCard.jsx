@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { formatDate } from '../functions/formatDate';
 import '../styles/PostCard.css';
 
-function PostCard({ title, summary, image, link, date }) {
+function PostCard({ title, summary, image, slug, date }) {
   return (
-    <Link to={link} className="post-card">
+    <Link to={`/blog/${slug}`} className="post-card">
       <img src={image} alt={title} />
       <div className="post-overlay">
         <h3>{title}</h3>

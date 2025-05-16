@@ -6,6 +6,7 @@ export const careerSwitch = {
   image: careerSwitchImage,
   slug: "career-switch",
   date: "2024-05-15",
+  type: "blog",
   body: `
     <h2>The Early Days</h2>
     <p>I finished high school in 2007 with one certainty: I wanted to stay in Australia. My parents, on the other hand, were preparing to move back to South Korea. That meant figuring out what I wanted to do - and fast. I had already been living away from them since 2008, and I knew I wanted to spend more time with them as I got older. So for me, being able to work remotely wasn't just a convenience - it was important.</p>
