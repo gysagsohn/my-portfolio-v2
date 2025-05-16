@@ -5,8 +5,14 @@
   padding: var(--space-sm) var(--space-lg);
 }
 
-/* Logo / Brand */
-.header-left .logo {
+/* Logo & Toggle Group */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.logo {
   font-size: 1.25rem;
   font-weight: bold;
   color: var(--text-secondary);
@@ -19,7 +25,7 @@
   color: var(--accent-button);
 }
 
-/* Dark mode toggle button */
+/* Toggle button next to logo */
 .dark-toggle {
   background: none;
   border: none;
@@ -32,6 +38,7 @@
 .dark-toggle:hover {
   color: var(--accent-button);
 }
+
 .navbar-box {
   display: flex;
   gap: var(--space-md);
