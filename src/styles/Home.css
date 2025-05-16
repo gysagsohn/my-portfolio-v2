@@ -43,6 +43,7 @@
   background-color: var(--accent-button);
 }
 
+/* === Headline & Intro Text === */
 .tagline {
   font-size: 2rem;
   font-weight: bold;
@@ -55,22 +56,6 @@
   font-size: var(--h2-size);
   font-family: var(--font-heading);
   font-weight: var(--heading-weight);
-  color: var(--text-primary);
-  margin: 0;
-}
-
-/* Container for multiple typewriter lines */
-.typewriter-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  margin-top: var(--space-xs);
-}
-
-.typewriter-line {
-  font-size: 3rem;
-  font-family: var(--font-heading);
-  font-weight: var(--heading-weight);
   color: var(--text-secondary);
   margin: 0;
 }
@@ -80,6 +65,63 @@
   font-size: 2rem;
   line-height: 1.6;
   margin: 0;
+}
+
+/* === Terminal Style Block === */
+.terminal-box {
+  background-color: var(--code-background);
+  color: var(--code-text);
+  padding: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  border-radius: var(--space-xs);
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 0 1px var(--code-border);
+  margin-top: var(--space-xs);
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+.fade-in-line {
+  animation: fadeInText 0.8s ease forwards;
+  opacity: 0;
+  color: var(--code-text); /* ensures text is visible inside terminal */
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-line:last-child::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--code-text);
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* === Optional Faux File Header === */
+.terminal-header {
+  background-color: var(--code-header);
+  color: var(--code-text);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--space-xs) var(--space-xs) 0 0;
+  margin-bottom: 0;
+  width: fit-content;
 }
 
 /* === CTA Buttons === */
@@ -97,9 +139,7 @@
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
-  display: inline-block;
   text-align: center;
-  text-decoration: none;
   background-color: transparent;
   color: var(--text-secondary);
   border: 2px solid var(--text-secondary);
@@ -110,6 +150,23 @@
   background-color: var(--hover-colour);
   color: var(--text-primary);
   border-color: var(--accent-button);
+}
+
+/* === Scroll Down Arrow === */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: var(--text-secondary);
+  animation: bounce 1.8s infinite ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
 }
 
 /* === Contact Icons Reveal === */
@@ -130,21 +187,22 @@
   }
 }
 
-/* === Scroll Down Arrow === */
-.scroll-down-indicator {
-  position: absolute;
-  bottom: var(--space-sm);
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: var(--text-secondary);
-  animation: bounce 1.8s infinite ease-in-out;
-  cursor: pointer;
-}
 
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
+/* === VS Code Syntax Highlighting (if you use spans again) === */
+.code-keyword {
+  color: #569CD6;
+}
+.code-variable {
+  color: #9CDCFE;
+}
+.code-class {
+  color: #4EC9B0;
+}
+.code-method {
+  color: #DCDCAA;
+}
+.code-string {
+  color: #CE9178;
 }
 
 /* === Blog + Project + About Section === */

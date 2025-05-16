@@ -308,3 +308,28 @@ Coming soon – will be deployed to [Netlify](https://www.netlify.com/)
 
 - Save the retro link/TARDIS easter egg idea for version 2.1
 - Consider blog posts as markdown or hardcoded components for now
+
+## 🧠 Terminal-Style Typing Animation (Hero Section)
+
+The hero section now features a custom-built **code-style typing animation**, mimicking a VS Code terminal experience. Each line is:
+
+- Displayed line-by-line with a simulated typing effect
+- Highlighted using syntax-coloured spans for keywords, strings, and methods
+- Styled with a dark terminal background and a blinking cursor at the end
+
+💡 **This idea was inspired by a conversation with [Ben]**, who suggested making the hero section look like you're actively coding. It's since become one of the defining interactive elements of the site. Thanks, Ben!
+
+---
+
+## 🧪 Past Experiments
+
+Before building the terminal-style code animation, I originally used [`react-simple-typewriter`](https://www.npmjs.com/package/react-simple-typewriter) with pre-defined phrases like:
+
+```js
+"I'm Gy Sohn"
+"Based in Sydney"
+"React, Node & Beyond"
+"Ex-Lawyer Turned Coder"
+
+```
+Although I moved away from that for the hero section, I still plan to reuse that style elsewhere in future projects (e.g. blog intros, testimonial banners, or contact animations).

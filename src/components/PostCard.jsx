@@ -12,7 +12,6 @@ function PostCard({ title, summary, image, slug, date }) {
         {date && <p className="post-date">{formatDate(date)}</p>}
         <p className="read-more">Click to read more →</p>
       </div>
-      <span className="hover-hint">Hover to read</span>
     </Link>
   );
 }
