@@ -6,17 +6,19 @@
   padding: var(--space-md);
   border-radius: var(--space-sm);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  scroll-snap-align: start;
+  scroll-snap-align: center; /* KEY CHANGE */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: var(--space-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-inline: 1rem; /* spacing between cards */
 }
 
-.timeline-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+.timeline-item:hover,
+.timeline-item:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-year {

@@ -3,9 +3,9 @@
   max-width: 100%;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
-/* Optional: Faded edges for scroll hint */
 .timeline-wrapper::after,
 .timeline-wrapper::before {
   content: '';
@@ -27,16 +27,11 @@
   background: linear-gradient(to right, var(--background-colour), transparent);
 }
 
-/* === NEW: Button row above cards === */
-.timeline-button-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-sm);
-  padding: 0 var(--space-md);
-}
-
 .timeline-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
   background-color: var(--hover-colour);
   border: none;
   border-radius: 50%;
@@ -53,26 +48,42 @@
   opacity: 1;
 }
 
-/* === Timeline Scroll Area === */
+.timeline-button.left {
+  left: 1rem;
+}
+
+.timeline-button.right {
+  right: 1rem;
+}
+
 .timeline-scroll {
   display: flex;
   overflow-x: auto;
   gap: var(--space-lg);
   scroll-snap-type: x mandatory;
+  justify-content: start;
   padding: var(--space-md);
-  scrollbar-width: thin;
-  scrollbar-color: var(--hover-colour) transparent;
-}
-
-.timeline-scroll:hover {
-  scrollbar-width: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .timeline-scroll::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
 
-.timeline-scroll::-webkit-scrollbar-thumb {
-  background-color: var(--hover-colour);
-  border-radius: 10px;
+.timeline-progress-container {
+  height: 6px;
+  width: 100%;
+  background-color: #e6e6e6;
+  border-radius: 999px;
+  margin-top: var(--space-sm);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.timeline-progress-bar {
+  height: 100%;
+  background-color: var(--accent-button);
+  border-radius: 999px;
+  transition: width 0.2s ease-in-out;
 }
