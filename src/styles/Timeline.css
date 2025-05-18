@@ -2,47 +2,88 @@
   padding: var(--space-md);
   max-width: 100%;
   position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
 
-/* Removed .timeline-heading — it’s now controlled by parent via .section-heading */
+.timeline-wrapper::after,
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 64px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.timeline-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background-colour), transparent);
+}
+
+.timeline-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background-colour), transparent);
+}
+
+.timeline-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--hover-colour);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-button:hover {
+  background-color: var(--accent-button);
+  opacity: 1;
+}
+
+.timeline-button.left {
+  left: 1rem;
+}
+
+.timeline-button.right {
+  right: 1rem;
+}
 
 .timeline-scroll {
-  position: relative;
-  max-height: 400px;
-  overflow-y: auto;
-  padding-right: var(--space-sm);
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-lg);
+  scroll-snap-type: x mandatory;
+  justify-content: start;
+  padding: var(--space-md);
+  scroll-behavior: smooth;
   scrollbar-width: none;
-  margin-top: var(--space-lg)
 }
 
 .timeline-scroll::-webkit-scrollbar {
   display: none;
 }
 
-.scroll-up-text,
-.scroll-down-text {
-  position: absolute;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: var(--text-secondary);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  z-index: 3;
+.timeline-progress-container {
+  height: 6px;
+  width: 100%;
+  background-color: #e6e6e6;
+  border-radius: 999px;
+  margin-top: var(--space-sm);
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.scroll-up-text {
-  bottom: -16px;
-  left: 1;
-}
-
-.scroll-down-text {
-  top: var(--space-md); /* Feels visually balanced now */
-  left: 1;
-}
-
-.scroll-up-text:hover,
-.scroll-down-text:hover {
-  color: var(--accent-button);
-  transform: scale(1.05);
+.timeline-progress-bar {
+  height: 100%;
+  background-color: var(--accent-button);
+  border-radius: 999px;
+  transition: width 0.2s ease-in-out;
 }

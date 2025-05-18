@@ -270,34 +270,55 @@ An optional enhancement idea for visual punch:
 ## Development Plan
 
 ### Completed
-- Set up Vite + React project
-- Created and structured routes with React Router (Home, Blog, Contact)
-- Designed reusable Header and Footer components
-- Created theme.css for global colours and font
-- Created and applied buttons.css styles
-- Set up typography and spacing system
-- Wrote README with full documentation
-- Tested local routing and layout
-- Set up dev branch for version control
-- Created custom 404 page with lighthearted error message
-- Added SEO meta tags (title, description, author)
-- Added Open Graph and Twitter Card meta tags for social previews
+
+- ✅ Set up Vite + React project
+- ✅ Created and structured routes with React Router (Home, Blog, Contact)
+- ✅ Designed reusable Header and Footer components
+- ✅ Built global theming system using `theme.css` (colour palette, font stack, spacing)
+- ✅ Created reusable button components and styles
+- ✅ Implemented typography and spacing system using CSS variables
+- ✅ Integrated city detection using `ipapi.co`
+- ✅ Added SEO meta tags and Open Graph previews
+- ✅ Styled the homepage with responsive layout and component-based sections
+- ✅ Deployed site to Netlify
+- ✅ Set up `404` custom page with humour-driven messaging
+- ✅ Created a **terminal-style code animation** in the Hero section:
+- ✅ Styled to mimic VS Code with syntax-highlighted tokens (`const`, `string`, `method`)
+- ✅ Fades each line in with typing animation and blinking cursor
+- ✅ Uses `react-simple-typewriter` with `renderText` for full JSX control
+- ✅ Loop resets for continuous animation
+- ✅ Idea credit: **Ben** — thanks for the inspiration!
+
+- ✅ Built the **Contact Page**:
+  - Minimal, theme-aligned layout with:
+    - Click-to-open social links (`mailto`, LinkedIn, Instagram)
+    - Copy-to-clipboard with animated checkmark ✅
+    - Keyboard accessible (`tabIndex`, `Enter` key support)
+    - Leveraging shared `socialLinks.js` data for easy reuse and updates
+
+- ✅ Added logo and dark mode toggle to header:
+  - Logo (`~GySohn`) links to home
+  - Toggle persists theme in `localStorage` and updates DOM class (`dark`)
+  - Colour logic to be styled later (dark hover/focus effects planned)
+
+- ✅ README upgraded with:
+  - Full feature documentation
+  - Code animation breakdown
+  - Notes on alternate `Typewriter` styles (multi-line greeting variant)
 
 ### In Progress / Next
-- Wireframe design for website
-- Finalise visual design and layout implementation
-- Write and refine content for each section
-- Style each page with responsive layout
-- Add navigation highlights for current route
-- Build the blog page to display post previews
-- Optimise for mobile and tablet devices
-- Finalise animations and transitions (optional)
-- Prepare and push to GitHub
-- Deploy to Netlify
+
+- [ ] Finalise visual styling for dark mode theme
+- [ ] Blog page layout and project post content
+- [ ] Blog cards with filters and tag system
+- [ ] Add scroll-based animation using AOS or Framer Motion
+- [ ] Mobile-first audit and UI polish
+- [ ] Write blog post about the terminal animation process
+- [ ] Add markdown rendering and routing for blog posts
 
 ## 🚀 Live Demo
 
-Coming soon – will be deployed to [Netlify](https://www.netlify.com/)
+Coming soon – will be deployed to [Netlify](gysohn.com)
 
 ---
 

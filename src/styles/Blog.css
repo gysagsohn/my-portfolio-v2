@@ -6,14 +6,16 @@
 
 .blog-hero {
   text-align: center;
-  margin: var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 .blog-heading {
   font-size: var(--h2-size);
   font-family: var(--font-heading);
   color: var(--text-secondary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
 }
 
 .blog-subheading {
@@ -56,4 +58,5 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-lg);
   justify-items: center;
+  padding: var(--space-lg) var(--space-md);
 }

@@ -1,50 +1,49 @@
 import { useEffect, useRef, useState } from 'react';
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import timelineData from '../Data/timelineData';
 import '../styles/Timeline.css';
 import TimelineItem from './ui/TimelineItem';
 
 function Timeline() {
   const scrollRef = useRef(null);
-  const [atTop, setAtTop] = useState(true);
-  const [atBottom, setAtBottom] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-  const checkScroll = () => {
+  // === Scroll Progress Calculation ===
+  const handleScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
-    setAtTop(el.scrollTop === 0);
-    setAtBottom(el.scrollTop + el.clientHeight >= el.scrollHeight - 1);
+    const total = el.scrollWidth - el.clientWidth;
+    const scrolled = el.scrollLeft;
+    setProgress((scrolled / total) * 100);
   };
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    checkScroll();
-    el.addEventListener('scroll', checkScroll);
-    return () => el.removeEventListener('scroll', checkScroll);
+
+    el.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => el.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+  // === Scroll by one card (on button click)
+  const scrollByCard = (dir = 1) => {
+    const el = scrollRef.current;
+    const cardWidth = 340 + 32; // Card width + gap
+    if (!el) return;
+    el.scrollBy({ left: cardWidth * dir, behavior: 'smooth' });
+    setTimeout(handleScroll, 600); // Sync bar after animation
   };
-
-  const scrollToBottom = () => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
-  };
-
 
   return (
     <div className="timeline-wrapper">
-      {!atTop && (
-        <span className="scroll-up-text" onClick={scrollToTop}>
-          Scroll up ↑
-        </span>
-      )}
-
-      {!atBottom && (
-        <span className="scroll-down-text" onClick={scrollToBottom}>
-          Scroll down ↓
-        </span>
-      )}
+      <button className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
+        <HiOutlineChevronLeft size={28} />
+      </button>
+      <button className="timeline-button right" onClick={() => scrollByCard(1)} aria-label="Scroll Right">
+        <HiOutlineChevronRight size={28} />
+      </button>
 
       <div className="timeline-scroll" ref={scrollRef}>
         {timelineData.map((entry, index) => (
@@ -55,6 +54,13 @@ function Timeline() {
             description={entry.description}
           />
         ))}
+      </div>
+
+      <div className="timeline-progress-container">
+        <div
+          className="timeline-progress-bar"
+          style={{ width: `${progress}%` }}
+        ></div>
       </div>
     </div>
   );
