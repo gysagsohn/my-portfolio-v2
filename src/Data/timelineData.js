@@ -6,6 +6,12 @@ const timeline = [
       "Built and shipped real-world tools like the Whiteboard Scheduler and Induction App — code, coffee, and all.",
   },
   {
+    year: "2024 — 2024",
+    title: "Developer Intern · GoDriving",
+    description:
+      "Fixed URL SEO issues by removing the '#' from React Router paths. Deployed to AWS using S3 and CloudFront, tested redirects, and documented the process. First internship — first time seeing my code make it to prod.",
+  },
+  {
     year: "2024 — 2025",
     title: "Diploma of IT, Coder Academy",
     description:

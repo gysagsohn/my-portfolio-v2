@@ -1,50 +1,30 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import timelineData from '../Data/timelineData';
 import '../styles/Timeline.css';
 import TimelineItem from './ui/TimelineItem';
 
 function Timeline() {
   const scrollRef = useRef(null);
-  const [atTop, setAtTop] = useState(true);
-  const [atBottom, setAtBottom] = useState(false);
 
-  const checkScroll = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setAtTop(el.scrollTop === 0);
-    setAtBottom(el.scrollTop + el.clientHeight >= el.scrollHeight - 1);
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({ left: -300, behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    checkScroll();
-    el.addEventListener('scroll', checkScroll);
-    return () => el.removeEventListener('scroll', checkScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
   };
-
-  const scrollToBottom = () => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
-  };
-
 
   return (
     <div className="timeline-wrapper">
-      {!atTop && (
-        <span className="scroll-up-text" onClick={scrollToTop}>
-          Scroll up ↑
-        </span>
-      )}
-
-      {!atBottom && (
-        <span className="scroll-down-text" onClick={scrollToBottom}>
-          Scroll down ↓
-        </span>
-      )}
+      <div className="timeline-button-row">
+        <button className="timeline-button" onClick={scrollLeft} aria-label="Scroll Left">
+          <HiOutlineChevronLeft size={28} />
+        </button>
+        <button className="timeline-button" onClick={scrollRight} aria-label="Scroll Right">
+          <HiOutlineChevronRight size={28} />
+        </button>
+      </div>
 
       <div className="timeline-scroll" ref={scrollRef}>
         {timelineData.map((entry, index) => (

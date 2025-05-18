@@ -2,47 +2,77 @@
   padding: var(--space-md);
   max-width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
-/* Removed .timeline-heading — it’s now controlled by parent via .section-heading */
+/* Optional: Faded edges for scroll hint */
+.timeline-wrapper::after,
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 64px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
 
+.timeline-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background-colour), transparent);
+}
+
+.timeline-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background-colour), transparent);
+}
+
+/* === NEW: Button row above cards === */
+.timeline-button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  padding: 0 var(--space-md);
+}
+
+.timeline-button {
+  background-color: var(--hover-colour);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-button:hover {
+  background-color: var(--accent-button);
+  opacity: 1;
+}
+
+/* === Timeline Scroll Area === */
 .timeline-scroll {
-  position: relative;
-  max-height: 400px;
-  overflow-y: auto;
-  padding-right: var(--space-sm);
-  scrollbar-width: none;
-  margin-top: var(--space-lg)
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-lg);
+  scroll-snap-type: x mandatory;
+  padding: var(--space-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--hover-colour) transparent;
+}
+
+.timeline-scroll:hover {
+  scrollbar-width: auto;
 }
 
 .timeline-scroll::-webkit-scrollbar {
-  display: none;
+  height: 6px;
 }
 
-.scroll-up-text,
-.scroll-down-text {
-  position: absolute;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: var(--text-secondary);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  z-index: 3;
-}
-
-.scroll-up-text {
-  bottom: -16px;
-  left: 1;
-}
-
-.scroll-down-text {
-  top: var(--space-md); /* Feels visually balanced now */
-  left: 1;
-}
-
-.scroll-up-text:hover,
-.scroll-down-text:hover {
-  color: var(--accent-button);
-  transform: scale(1.05);
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--hover-colour);
+  border-radius: 10px;
 }
