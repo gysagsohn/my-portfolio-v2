@@ -7,6 +7,7 @@ import TimelineItem from './ui/TimelineItem';
 function Timeline() {
   const scrollRef = useRef(null);
   const [progress, setProgress] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
   const handleScroll = () => {
     const el = scrollRef.current;
@@ -19,7 +20,7 @@ function Timeline() {
     const el = scrollRef.current;
     if (!el) return;
     el.addEventListener('scroll', handleScroll);
-    handleScroll();
+    handleScroll(); // initial update
     return () => el.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -33,10 +34,13 @@ function Timeline() {
 
   return (
     <>
-      {/* Desktop View */}
+      {/* === Desktop Vertical Timeline === */}
       <div className="milestone-vertical-wrapper">
         <div className="milestone-vertical-line" />
-        <div className="milestone-vertical-track">
+        <div
+          id="milestone-vertical-track"
+          className={`milestone-vertical-track ${expanded ? 'expanded' : ''}`}
+        >
           {timelineData.map((entry, index) => (
             <TimelineItem
               key={index}
@@ -46,9 +50,19 @@ function Timeline() {
             />
           ))}
         </div>
+        <div className="timeline-toggle-wrapper">
+          <button
+            onClick={() => setExpanded(prev => !prev)}
+            className="cta-button"
+            aria-expanded={expanded}
+            aria-controls="milestone-vertical-track"
+          >
+            {expanded ? 'Hide Timeline' : 'Show Full Timeline'}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile View */}
+      {/* === Mobile Horizontal Timeline === */}
       <div className="milestone-horizontal-wrapper">
         <button className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
           <HiOutlineChevronLeft size={24} />

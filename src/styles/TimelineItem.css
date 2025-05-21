@@ -8,7 +8,7 @@
 
 .milestone-vertical-dot {
   position: absolute;
-  left: -65px; /* aligns to vertical line at 40px in parent */
+  left: -65px;
   top: 16px;
   width: 20px;
   height: 20px;
@@ -16,6 +16,11 @@
   border-radius: 50%;
   box-shadow: 0 0 0 5px var(--hover-colour); /* Thick indigo outline */
   z-index: 3;
+}
+.milestone-dot-wrapper {
+  position: relative;
+  width: 0; /* Prevents layout shifting */
+  height: 100%;
 }
 
 .timeline-card {
