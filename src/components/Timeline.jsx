@@ -33,7 +33,7 @@ function Timeline() {
 
   return (
     <>
-      {/* Desktop Zigzag Layout */}
+      {/* Desktop View */}
       <div className="milestone-vertical-wrapper">
         <div className="milestone-vertical-line" />
         <div className="milestone-vertical-track">
@@ -43,13 +43,12 @@ function Timeline() {
               year={entry.year}
               title={entry.title}
               description={entry.description}
-              isLeft={index % 2 === 0}
             />
           ))}
         </div>
       </div>
 
-      {/* Mobile Horizontal Layout */}
+      {/* Mobile View */}
       <div className="milestone-horizontal-wrapper">
         <button className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
           <HiOutlineChevronLeft size={24} />

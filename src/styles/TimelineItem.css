@@ -1,54 +1,39 @@
-.timeline-grid-row {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: start;
-  gap: var(--space-sm);
-  margin: var(--space-lg) 0;
+.milestone-vertical-item {
   position: relative;
-}
-
-.timeline-dot-wrapper {
-  position: relative;
-  width: 20px;
-  height: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 .milestone-vertical-dot {
+  position: absolute;
+  left: -65px; /* aligns to vertical line at 40px in parent */
+  top: 16px;
   width: 20px;
   height: 20px;
   background-color: var(--accent-button); /* Amber */
   border-radius: 50%;
-  box-shadow: 0 0 0 5px var(--hover-colour); /* Thick Indigo outline */
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 5px var(--hover-colour); /* Thick indigo outline */
   z-index: 3;
 }
 
 .timeline-card {
-  max-width: 600px; /* wider rectangle */
+  flex: 1;
   background-color: var(--background-colour);
   border-radius: var(--space-sm);
-  padding: var(--space-lg) var(--space-xl); /* more horizontal padding */
+  padding: var(--space-lg) var(--space-xl);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 2;
-  text-align: left;
   font-family: var(--font-body);
-}
-
-.timeline-card:hover {
-  transform: translateY(-4px);
+  text-align: left;
+  max-width: 100%;
 }
 
 .timeline-card .milestone-year {
   font-size: var(--small-size);
   font-weight: var(--heading-weight);
-  color: var(--accent-button);
+  color: var(--accent-button); /* Amber */
   margin-bottom: var(--space-xs);
-  display: block;
   font-family: var(--font-body); /* Inter */
 }
 
@@ -56,7 +41,7 @@
   font-size: var(--h3-size);
   font-family: var(--font-heading); /* Poppins */
   font-weight: var(--heading-weight);
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Indigo */
   margin-bottom: var(--space-xs);
 }
 
@@ -66,8 +51,4 @@
   color: var(--text-primary);
   line-height: var(--body-line-height);
   margin: 0;
-}
-
-.timeline-empty {
-  height: 100%;
 }
