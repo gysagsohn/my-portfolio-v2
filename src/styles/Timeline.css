@@ -1,89 +1,117 @@
-.timeline-wrapper {
-  padding: var(--space-md);
-  max-width: 100%;
+/* === Desktop View: Central Vertical Timeline === */
+.milestone-vertical-wrapper {
   position: relative;
-  overflow: hidden;
-  z-index: 0;
+  width: 100%;
+  padding: var(--space-xl) var(--space-md);
 }
 
-.timeline-wrapper::after,
-.timeline-wrapper::before {
-  content: '';
+.milestone-vertical-line {
   position: absolute;
   top: 0;
-  width: 64px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: var(--hover-colour); /* Indigo */
+  z-index: 1;
 }
 
-.timeline-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, var(--background-colour), transparent);
-}
-
-.timeline-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, var(--background-colour), transparent);
-}
-
-.timeline-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background-color: var(--hover-colour);
-  border: none;
-  border-radius: 50%;
-  padding: 0.5rem;
-  cursor: pointer;
-  color: var(--text-primary);
-  transition: background-color 0.2s ease, opacity 0.2s ease;
-  opacity: 0.9;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.timeline-button:hover {
-  background-color: var(--accent-button);
-  opacity: 1;
-}
-
-.timeline-button.left {
-  left: 1rem;
-}
-
-.timeline-button.right {
-  right: 1rem;
-}
-
-.timeline-scroll {
+.milestone-vertical-track {
   display: flex;
-  overflow-x: auto;
-  gap: var(--space-lg);
-  scroll-snap-type: x mandatory;
-  justify-content: start;
-  padding: var(--space-md);
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  flex-direction: column;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 2;
 }
 
-.timeline-scroll::-webkit-scrollbar {
+/* === Hide Horizontal Layout on Desktop === */
+.milestone-horizontal-wrapper {
   display: none;
 }
 
-.timeline-progress-container {
-  height: 6px;
-  width: 100%;
-  background-color: #e6e6e6;
-  border-radius: 999px;
-  margin-top: var(--space-sm);
-  overflow: hidden;
-  pointer-events: none;
-}
+/* === Mobile View: Horizontal Scroll === */
+@media (max-width: 640px) {
+  .milestone-vertical-wrapper {
+    display: none;
+  }
 
-.timeline-progress-bar {
-  height: 100%;
-  background-color: var(--accent-button);
-  border-radius: 999px;
-  transition: width 0.2s ease-in-out;
+  .milestone-horizontal-wrapper {
+    display: block;
+    position: relative;
+    padding: var(--space-md);
+  }
+
+  .milestone-horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--space-lg);
+    padding: var(--space-md) 0;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .milestone-horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .milestone-horizontal-card {
+    flex: 0 0 auto;
+    min-width: 280px;
+    max-width: 320px;
+    background-color: var(--background-colour);
+    padding: var(--space-md);
+    border-radius: var(--space-sm);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    scroll-snap-align: center;
+  }
+
+  .milestone-horizontal-card h4 {
+    font-size: var(--h3-size);
+    margin-bottom: var(--space-xs);
+    color: var(--text-secondary);
+  }
+
+  .milestone-horizontal-card p {
+    font-size: var(--small-size);
+    color: var(--text-primary);
+  }
+
+  .timeline-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: var(--hover-colour);
+    border: none;
+    border-radius: 50%;
+    padding: 0.75rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .timeline-button.left {
+    left: 1rem;
+  }
+
+  .timeline-button.right {
+    right: 1rem;
+  }
+
+  .timeline-progress-container {
+    height: 6px;
+    width: 100%;
+    background-color: #e6e6e6;
+    border-radius: 999px;
+    margin-top: var(--space-sm);
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .timeline-progress-bar {
+    height: 100%;
+    background-color: var(--accent-button);
+    border-radius: 999px;
+    transition: width 0.2s ease-in-out;
+  }
 }
