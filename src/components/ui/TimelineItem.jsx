@@ -13,4 +13,5 @@ function TimelineItem({ year, title, description }) {
   );
 }
 
+
 export default TimelineItem;

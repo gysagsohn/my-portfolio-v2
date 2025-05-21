@@ -1,5 +1,5 @@
 .cta-button {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: 18px;
   padding: 14px 28px;
   border-radius: 20px;
@@ -9,22 +9,22 @@
   display: inline-block;
   text-align: center;
 
-  background-color: var(--hover-colour); /* Indigo Light */
-  color: var(--text-primary);              /* Charcoal */
+  background-color: var(--hover-colour); 
+  color: var(--text-primary);              
   border: none;
 
   transition: all 0.2s ease-in-out;
 }
 
 .cta-button:hover {
-  background-color: var(--accent-button);  /* Amber Gold */
-  color: var(--text-primary);              /* Charcoal stays */
+  background-color: var(--accent-button);  
+  color: var(--text-primary);             
   transform: scale(1.03);
 }
 
 /* Mini version of the CTA button */
 .mini-button {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: 0.85rem;
   padding: 6px 14px;
   border-radius: 12px;
@@ -34,15 +34,15 @@
   display: inline-block;
   text-align: center;
 
-  background-color: var(--hover-colour); /* Indigo */
-  color: var(--text-primary);            /* Charcoal */
+  background-color: var(--hover-colour); 
+  color: var(--text-primary);            
   border: none;
 
   transition: all 0.2s ease-in-out;
 }
 
 .mini-button:hover {
-  background-color: var(--accent-button); /* Amber */
+  background-color: var(--accent-button); 
   color: var(--text-primary);
   transform: scale(1.05);
 }
