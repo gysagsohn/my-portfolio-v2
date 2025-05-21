@@ -1,101 +1,95 @@
-// src/data/blogPosts/readyGroupHandbook.js
 import readyGroupHandbookImage from '../../assets/readyGroupHandbook.png';
 
 export const readyGroupHandbook = {
   title: "Project Spotlight: Ready Group Induction Handbook",
-  summary: "A look at the digital handbook I built — what it is, why I made it, what I learned, and what’s coming next.",
+  summary: "A look at the digital handbook I built: what it is, why I made it, what I learned, and what’s coming next.",
   image: readyGroupHandbookImage,
   slug: "induction-handbook",
   date: "2024-05-15",
   type: "project",
   body: `
     <h2>What I Built</h2>
-    <p>This is a frontend-only employee induction handbook for Ready Group. Think of it as a clean, easy-to-navigate internal site (similar to AirMason) that walks new hires through company values, policies, leadership, and more.</p>
-    <p><strong>Live site:</strong> <a href="https://readygroup-employeehandbook.netlify.app" target="_blank" rel="noopener noreferrer">readygroup-employeehandbook.netlify.app</a></p>
+    <p>This is a frontend only employee induction handbook for Ready Group. Think of it as a clean, easy to navigate internal site (<a href="https://editor.airmason.com/books/template-44327" target="_blank" rel="noopener noreferrer">similar to AirMason</a>) that walks new hires through company values, policies, leadership, and more.</p>
+    <p><strong>Live site:</strong> <a href="https://readygroup-employeehandbook.netlify.app" target="_blank" rel="noopener noreferrer">readygroup-employeehandbook.netlify.app</a> (password protected for confidentiality)</p>
+    <p><strong>Repo:</strong> <a href="https://github.com/gysagsohn/readygroup_induction" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+
     <p><strong>I used:</strong></p>
     <ul>
-      <li>React + Vite for fast dev + build</li>
+      <li>React + Vite for fast development and build</li>
       <li>Native CSS with Flexbox for layout control</li>
-      <li>LocalStorage-based password gate (no backend)</li>
-      <li>Font Awesome for clean iconography</li>
+      <li>LocalStorage based password gate (no backend)</li>
+      <li>Font Awesome for iconography</li>
       <li>Figma for layout planning</li>
     </ul>
+
     <p><strong>The site includes:</strong></p>
     <ul>
-      <li>Welcome + company overview sections</li>
+      <li>Welcome and company overview sections</li>
       <li>Vision, mission, and core values</li>
-      <li>Service offerings + growth goals</li>
-      <li>PDF-linked company policies</li>
-      <li>Team introductions + contact details</li>
-      <li>A final confirmation checklist</li>
+      <li>Service offerings and growth goals</li>
+      <li>PDF linked company policies</li>
+      <li>Team introductions and contact details</li>
+      <li>Final confirmation checklist</li>
     </ul>
-    <p>And the best part? It just had its first real use at the company — and passed with flying colours.</p>
+
+    <p>It recently had its first real world use at Ready Group and passed with flying colours.</p>
 
     <h2>Why I Made It This Way</h2>
-    <p>This started as a design and dev challenge — a fully responsive, password-protected site that mimicked an internal onboarding tool. I wanted to:</p>
+    <p>This started as a design and development challenge. I wanted to solve a real world problem that employees at Ready Group would actually use. Previously, we were using a large static PDF. I wanted to simplify that experience and lay the groundwork for a more modern onboarding system. The long term vision is an interactive, trackable, digital first onboarding journey.</p>
+    <p>Goals for this version:</p>
     <ul>
-      <li>Build something practical and client-facing</li>
+      <li>Build something practical and client facing</li>
       <li>Focus on layout, design consistency, and section flow</li>
-      <li>Avoid backend complexity (for now)</li>
-      <li>See if I could manage protected content with just frontend tools</li>
+      <li>Avoid backend complexity for now</li>
+      <li>Keep the code lean and easy to maintain</li>
     </ul>
-    <p><strong>To make it feel smooth and polished, I:</strong></p>
+    <p>Key touches I implemented:</p>
     <ul>
-      <li>Created scroll-snapping sections</li>
-      <li>Added dropdown navigation</li>
-      <li>Used mobile-specific overflow fixes</li>
-      <li>Cleaned and organised layout files</li>
+      <li>Scroll snapping per section</li>
+      <li>Dropdown menu with click outside handling</li>
+      <li>Mobile overflow fixes and responsive spacing</li>
+      <li>Modular CSS and layout components</li>
     </ul>
 
-    <h2>Challenges & Fixes</h2>
+    <h2>Challenges and Fixes</h2>
     <ul>
-      <li><strong>Responsive layout pain:</strong> Getting scroll + snap to work across devices took fine-tuning (min-height, overflow-y: auto, cleaned CSS file structure).</li>
-      <li><strong>Password gate UX:</strong> Used LocalStorage and a custom ProtectedRoute component for redirect handling.</li>
-      <li><strong>Spacing bugs:</strong> Fixed bleed between sections by applying conditional padding + per-section layout fixes.</li>
-      <li><strong>Mobile nav:</strong> Used an <code>onClickOutside</code> handler to close dropdown menus when tapping outside.</li>
-      <li><strong>Netlify issues:</strong> SRC vs src file naming caused case sensitivity issues. Public asset references had to be cleaned up.</li>
-    </ul>
-    <p>Mobile view is still in progress — a few minor responsiveness tweaks remain.</p>
-
-    <h2>What I Asked ChatGPT</h2>
-    <ul>
-      <li>Scroll logic + snapping</li>
-      <li>Auth handling ideas (no backend)</li>
-      <li>Section-level CSS layout strategy</li>
-      <li>Figma file structure tips</li>
-      <li>Naming conventions for clarity</li>
-      <li>Deploy workflow and versioning steps</li>
+      <li><strong>Responsive layout pain:</strong> Scroll snap and section structure took some trial and error. I ended up using min-height and overflow-y to fix mobile jumpiness.</li>
+      <li><strong>Password gate UX:</strong> I used a simple LocalStorage check and custom ProtectedRoute for access control. Basic, but effective for internal use.</li>
+      <li><strong>File path bugs:</strong> Capitalised folders like SRC vs src broke deployment on Netlify. Lesson learned about case sensitivity.</li>
+      <li><strong>Spacing and bleed issues:</strong> Adjusted per section padding and added conditional spacing breakpoints to maintain flow.</li>
+      <li><strong>Dropdown behaviour:</strong> Needed to close on tap outside. Added a custom onClickOutside listener to handle this.</li>
+      <li><strong>Mobile view:</strong> Still polishing a few responsiveness edge cases</li>
     </ul>
 
-    <h2>What I’d Do Differently Next Time</h2>
+    <h2>Research That Helped Me Along the Way</h2>
     <ul>
-      <li>No backend = no real data (can’t track progress or users)</li>
-      <li>No account system — everyone uses a shared password</li>
-      <li>No real-time form handling — the checklist is visual only</li>
-      <li>Could’ve added better component testing</li>
-      <li>Wish I had used a design system + stuck to it</li>
-      <li>Would’ve used a state manager for the checklist logic</li>
+      <li>How to implement scroll snapping effectively across devices</li>
+      <li>Frontend only password gate logic with LocalStorage</li>
+      <li>Best practices for responsive layout without CSS frameworks</li>
+      <li>Tips on structuring sections in Figma</li>
+      <li>Versioning, naming conventions, and Netlify deploy prep</li>
     </ul>
 
-    <h2>Coming Soon: v2</h2>
-    <p>Once I dust off my MERN stack skills, version 2 is coming.</p>
+    <h2>What Comes Next</h2>
+    <p>While this version delivered exactly what I wanted a functional, user friendly frontend site it was always just step one.</p>
+    <p>Version 2 will be built once I wrap up some other work and polish my MERN stack chops.</p>
+    <p>Here’s what I plan for v2:</p>
     <ul>
-      <li>Proper login with email + password auth</li>
-      <li>Show/hide sections based on user role</li>
-      <li>Database to store user progress</li>
-      <li>Interactive onboarding (e.g. quizzes, checkpoints)</li>
+      <li>Login authentication (email and password)</li>
+      <li>Onboarding checklists tailored to each role</li>
+      <li>Database to track user progress</li>
+      <li>Quiz modules to make onboarding interactive</li>
     </ul>
-    <p>It’ll still stay modular — just with real data and logic powering the experience.</p>
+    <p>Basically, turning this prototype into a real onboarding system Ready Group can rely on long term.</p>
 
     <h2>Final Thoughts</h2>
-    <p>This was more than just a styling challenge. It was:</p>
+    <p>This was more than a layout or design project. It was:</p>
     <ul>
-      <li>A test of layout, scroll, and gated routing logic</li>
-      <li>A chance to build a real-world internal tool</li>
-      <li>A React project I can expand and iterate on</li>
+      <li>A chance to modernise a real business process</li>
+      <li>Hands on experience with gated routing, scroll management, and responsive flows</li>
+      <li>A foundation I plan to build on and expand with backend logic and real user data</li>
     </ul>
-    <p>I learned a lot about managing layout without external libraries — and when to keep things simple.</p>
-    <p>Want to try it out? <a href="https://readygroup-employeehandbook.netlify.app" target="_blank" rel="noopener noreferrer">Here’s the live link</a>.</p>
-    <p>If you’ve built something similar — or have suggestions for v2 — let’s chat.</p>
+    <p>Want to try it out? <a href="https://readygroup-employeehandbook.netlify.app" target="_blank" rel="noopener noreferrer">Here’s the live link</a> (no password provided for privacy reasons).</p>
+    <p>Check out the code on <a href="https://github.com/gysagsohn/readygroup_induction" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
   `
 };

@@ -8,61 +8,70 @@ function Timeline() {
   const scrollRef = useRef(null);
   const [progress, setProgress] = useState(0);
 
-  // === Scroll Progress Calculation ===
   const handleScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
     const total = el.scrollWidth - el.clientWidth;
-    const scrolled = el.scrollLeft;
-    setProgress((scrolled / total) * 100);
+    setProgress((el.scrollLeft / total) * 100);
   };
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-
     el.addEventListener('scroll', handleScroll);
     handleScroll();
-
     return () => el.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // === Scroll by one card (on button click)
   const scrollByCard = (dir = 1) => {
     const el = scrollRef.current;
-    const cardWidth = 340 + 32; // Card width + gap
+    const cardWidth = 340 + 32;
     if (!el) return;
     el.scrollBy({ left: cardWidth * dir, behavior: 'smooth' });
-    setTimeout(handleScroll, 600); // Sync bar after animation
+    setTimeout(handleScroll, 600);
   };
 
   return (
-    <div className="timeline-wrapper">
-      <button className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
-        <HiOutlineChevronLeft size={28} />
-      </button>
-      <button className="timeline-button right" onClick={() => scrollByCard(1)} aria-label="Scroll Right">
-        <HiOutlineChevronRight size={28} />
-      </button>
-
-      <div className="timeline-scroll" ref={scrollRef}>
-        {timelineData.map((entry, index) => (
-          <TimelineItem
-            key={index}
-            year={entry.year}
-            title={entry.title}
-            description={entry.description}
-          />
-        ))}
+    <>
+      {/* Desktop View */}
+      <div className="milestone-vertical-wrapper">
+        <div className="milestone-vertical-line" />
+        <div className="milestone-vertical-track">
+          {timelineData.map((entry, index) => (
+            <TimelineItem
+              key={index}
+              year={entry.year}
+              title={entry.title}
+              description={entry.description}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="timeline-progress-container">
-        <div
-          className="timeline-progress-bar"
-          style={{ width: `${progress}%` }}
-        ></div>
+      {/* Mobile View */}
+      <div className="milestone-horizontal-wrapper">
+        <button className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
+          <HiOutlineChevronLeft size={24} />
+        </button>
+        <button className="timeline-button right" onClick={() => scrollByCard(1)} aria-label="Scroll Right">
+          <HiOutlineChevronRight size={24} />
+        </button>
+
+        <div className="milestone-horizontal-scroll" ref={scrollRef}>
+          {timelineData.map((item, index) => (
+            <div key={index} className="milestone-horizontal-card">
+              <span className="milestone-year">{item.year}</span>
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="timeline-progress-container">
+          <div className="timeline-progress-bar" style={{ width: `${progress}%` }} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
