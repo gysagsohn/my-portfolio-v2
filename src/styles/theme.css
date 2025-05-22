@@ -39,3 +39,29 @@
   --code-border: #333333;       /* Subtle outline */
   --code-header: #252526;       /* Faux tab/file header */
 }
+
+
+  body.dark {
+  --background-colour: #121212;
+  --text-primary: #f0f0f0;
+  --text-secondary: #FFD700;     /* Gold */
+  --accent-button: #FF8C00;      /* Dark orange */
+  --hover-colour: #333333;       /* Subtle grey */
+  --code-background: #1e1e1e;
+  --code-text: #d4d4d4;
+  --code-border: #3c3c3c;
+  --code-header: #2c2c2c;
+
+  }
+
+  body.dark .cta-button-outline {
+  background-color: transparent;
+  border: 2px solid var(--accent-button);
+  color: var(--accent-button);
+  }
+
+  body.dark .cta-button-outline:hover {
+  background-color: var(--accent-button);
+  color: var(--background-colour);
+  border-color: var(--accent-button);
+  }
