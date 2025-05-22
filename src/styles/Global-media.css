@@ -1,9 +1,5 @@
 /* === Global spacing between header and main === */
-main {
-  display: block;
-  padding-top: var(--space-xl);
-}
-
+/* Desktop uses default spacing from Home.css */
 @media (max-width: 1200px) {
   main {
     padding-top: var(--space-xxl);
@@ -16,55 +12,7 @@ main {
   }
 }
 
-
-/* === Tablet View: 1500px–1201px === */
-@media (max-width: 1500px) and (min-width: 1201px) {
-  .hero-row {
-    flex-direction: row;
-    padding: var(--space-lg) var(--space-md);
-    gap: var(--space-lg);
-  }
-
-  .hero-image {
-    width: 320px;
-    height: 320px;
-    border-width: 6px;
-  }
-
-  .hero-text {
-    max-width: 500px;
-  }
-
-  .terminal-box {
-    font-size: 1.1rem;
-    padding: var(--space-sm);
-  }
-
-  .home-main-grid {
-    gap: var(--space-lg);
-  }
-
-  .timeline-column,
-  .content-column {
-    padding: 0 var(--space-sm);
-  }
-
-  .preview-column {
-    justify-content: center;
-  }
-
-  .preview-column .post-card {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .terminal-box + .cta-buttons {
-    margin-top: var(--space-md);
-  }
-}
-
-
-/* === Mobile View: ≤1200px === */
+/* === Tablet & Below: ≤1200px === */
 @media (max-width: 1200px) {
   .hero-row {
     flex-direction: column;
@@ -79,9 +27,15 @@ main {
     align-items: center;
   }
 
+  .hero-image {
+    width: 320px;
+    height: 320px;
+  }
+
   .terminal-box {
     font-size: 1rem;
     max-width: 90%;
+    min-height: 160px;
   }
 
   .cta-buttons {
@@ -133,126 +87,18 @@ main {
   .site-footer {
     padding-bottom: var(--space-xl);
   }
-
-  .mobile-nav-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-secondary);
-  }
-
-  .mobile-menu-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--space-xs);
-  }
-
-  .navbar-box {
-    display: none;
-  }
-
-  .mobile-menu-toggle {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-secondary);
-  }
-
-  .mobile-nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--space-xs);
-    padding: var(--space-sm) 0;
-  }
-
-  .mobile-nav-links .nav-link {
-    font-size: 0.9rem;
-    padding: 0.25rem 0.75rem;
-    text-align: right;
-    width: 100%;
-  }
-
-  .milestone-vertical-wrapper {
-    display: none;
-  }
-
-  .milestone-horizontal-wrapper {
-    display: block;
-  }
 }
 
-
-/* === Narrow View: ≤1000px (Blog & Contact) === */
-@media (max-width: 1000px) {
-  .blog-page {
-    padding: var(--space-md);
-  }
-
-  .blog-hero {
-    padding: var(--space-md);
-  }
-
-  .blog-heading {
-    font-size: var(--h2-size);
-  }
-
-  .blog-tabs {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-sm);
-  }
-
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-    padding: var(--space-md);
-  }
-
-  .contact-page {
-    padding: var(--space-xl) var(--space-lg);
-  }
-
-  .contact-links {
-    width: 100%;
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-xl);
-  }
-
-  .contact-item {
-    flex-direction: column;
-    gap: var(--space-xs);
-    align-items: center;
-  }
-
-  .copy-btn {
-    margin-left: 0;
-  }
-
-  .icon {
-    font-size: 1.5rem;
-  }
-
-  .contact-heading {
-    font-size: var(--h2-size);
-  }
-}
-
-
-/* === Extra Narrow View: ≤800px === */
+/* === Narrow View: ≤800px === */
 @media (max-width: 800px) {
+  .hero-image {
+    width: 280px;
+    height: 280px;
+  }
+
   .hero-row {
     min-height: 95vh;
-  }
-
-  .about-section,
-  .skills-section {
-    max-width: 90%;
+    margin-top: var(--space-xxl);
   }
 
   .cta-buttons {
@@ -262,8 +108,31 @@ main {
     margin-bottom: var(--space-xxl);
   }
 
-  .home-main-grid {
-    margin-top: var(--space-lg);
+  .contact-links {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xxl);
+  }
+
+  .about-section,
+  .skills-section {
+    max-width: 90%;
+  }
+}
+
+/* === Mobile View: ≤500px === */
+@media (max-width: 500px) {
+  .hero-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-row {
+    margin-top: var(--space-xxl);
+  }
+
+  .cta-buttons {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xl);
   }
 
   .contact-links {
