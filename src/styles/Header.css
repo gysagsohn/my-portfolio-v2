@@ -82,6 +82,60 @@
   display: none;
 }
 
+/* === Responsive Header: Tablet & Mobile Nav Behaviour === */
+@media (max-width: 1200px) {
+  .mobile-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-xs);
+  }
+
+  .navbar-box {
+    display: none;
+  }
+
+  /* === Mobile Menu Toggle Button === */
+.mobile-menu-toggle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--accent-button);
+  transform: scale(1.05);
+}
+
+/* === Mobile Nav Dropdown === */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-xs);
+  padding: var(--space-sm) 0;
+  margin-top: var(--space-xs);
+}
+
+.mobile-nav-links .nav-link {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  text-align: right;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.mobile-nav-links .nav-link:hover {
+  color: var(--accent-button);
+  background-color: transparent;
+}
+}
+
 /* === Retro Mode Toggle Button === */
 body.retro .dark-toggle {
   font-family: 'Press Start 2P', cursive;
