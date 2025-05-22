@@ -65,3 +65,22 @@
   color: var(--background-colour);
   border-color: var(--accent-button);
   }
+
+
+  body.retro {
+  --background-colour: #1A1A1A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #00FFFF;     /* Bright Cyan */
+  --accent-button: #FF00FF;      /* Magenta */
+  --hover-colour: #FFEE00;       /* Yellow */
+
+  --code-background: #000000;
+  --code-text: #00FF00;
+  --code-border: #444444;
+  --code-header: #222222;
+  }
+
+  body.retro {
+  --font-heading: 'Press Start 2P', monospace;
+  --font-body: 'Press Start 2P', monospace;
+  }

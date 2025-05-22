@@ -9,19 +9,23 @@ const navItems = [
 ];
 
 function Header() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
   });
 
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle('dark', darkMode);
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
+    document.body.classList.remove('light', 'dark', 'retro');
+    document.body.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
-  const toggleDarkMode = () => {
-    setDarkMode(prev => !prev);
+  const cycleTheme = () => {
+    const next =
+      theme === 'light' ? 'dark' :
+      theme === 'dark' ? 'retro' : 'light';
+    setTheme(next);
   };
 
   const toggleMenu = () => {
@@ -34,10 +38,12 @@ function Header() {
         <Link to="/" className="logo">~GySohn</Link>
         <button
           className="dark-toggle"
-          aria-label="Toggle dark mode"
-          onClick={toggleDarkMode}
+          aria-label="Cycle theme"
+          onClick={cycleTheme}
         >
-          {darkMode ? '☀️' : '🌙'}
+          {theme === 'light' && '🌞'}
+          {theme === 'dark' && '🌙'}
+          {theme === 'retro' && '👾'}
         </button>
       </div>
 
@@ -58,9 +64,14 @@ function Header() {
 
       {/* Mobile Nav Toggle */}
       <div className="mobile-menu-wrapper">
-        <button className="mobile-menu-toggle" onClick={toggleMenu} aria-expanded={menuOpen}>
-          Menu {menuOpen ? '▲' : '▼'}
+        <button
+          className="mobile-menu-toggle"
+          onClick={toggleMenu}
+          aria-expanded={menuOpen}
+        >
+          {theme === 'retro' ? '👾 MENU' : `Menu ${menuOpen ? '▲' : '▼'}`}
         </button>
+
         {menuOpen && (
           <nav className="mobile-nav-links">
             {navItems.map(({ name, to }) => (

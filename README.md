@@ -50,7 +50,7 @@ Planned tools and technologies:
 
 ## 🔧 Features
 - Fully responsive layout (mobile-first)
-- Global theming using CSS variables
+- Global theming using CSS variables (light and dark mode supported)
 - Clean typography and consistent spacing system
 - Modular component structure with React
 - Planned blog integration (Markdown or JSX)
@@ -58,6 +58,32 @@ Planned tools and technologies:
 - Dynamic city detection using IP (via `ipapi.co`)
 - Fun animated wave icon next to the greeting
 - Social icon links (email, LinkedIn, Instagram)
+- Responsive timeline: vertical on desktop, horizontal scroll on mobile
+- Scroll buttons with dynamic positioning (inline or top row)
+- Year, title, and description styled per theme
+- Custom breakpoints used for tablet and mobile views:
+  - `max-width: 1500px`, `1200px`, `1000px`, `800px`, `500px`
+- Global-media.css manages responsive layout overrides for all pages
+- Components adapt layout and spacing based on screen size
+
+## 🎨 Theme Modes
+
+### 🌞 Light Mode (Default)  
+Clean, modern, neutral colours for readability.
+
+### 🌙 Dark Mode  
+Dark background, soft text, warm gold accents.
+
+### 👾 Retro Mode (Experimental)  
+Bright colours, pixel fonts, flashing buttons, 8-bit nostalgia.  
+> Just a bit of fun—don’t take this one too seriously.
+
+### Timeline Scroll (Mobile/Tablet)
+
+- Desktop: vertical milestone timeline with "Show Full" toggle
+- Mobile/Tablet: horizontal scroll with left/right navigation buttons
+- Auto-updates scroll progress bar with dynamic fill
+- Responsive layout: buttons move to top row on narrow screens
 
 ## Colour Scheme
 
@@ -73,6 +99,22 @@ I've implemented a global theme using CSS variables. Here's the palette currentl
   --accent-button: #FFB20F;         /* Amber Gold */
   --hover-colour: #B5A9E9;          /* Soft Purple */
   --font-family: 'Inter', sans-serif;
+}
+
+body.dark {
+  --background-colour: #121212;
+  --text-primary: #f0f0f0;
+  --text-secondary: #FFD700;
+  --accent-button: #FF8C00;
+  --hover-colour: #333333;
+}
+
+body.retro {
+  --background-colour: #1A1A1A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #00FFFF;
+  --accent-button: #FF00FF;
+  --hover-colour: #FFEE00;
 }
 ```
 
@@ -288,6 +330,7 @@ An optional enhancement idea for visual punch:
 - ✅ Uses `react-simple-typewriter` with `renderText` for full JSX control
 - ✅ Loop resets for continuous animation
 - ✅ Idea credit: **Ben** — thanks for the inspiration!
++ ✅ Finalised visual styling for dark mode theme
 
 - ✅ Built the **Contact Page**:
   - Minimal, theme-aligned layout with:

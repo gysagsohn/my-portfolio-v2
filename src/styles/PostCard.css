@@ -74,3 +74,19 @@
   font-size: var(--small-size);
   margin-top: var(--space-sm);
 }
+
+body.retro .post-card {
+  background-color: #111;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 12px #0ff;
+  font-family: 'Press Start 2P', cursive;
+  color: #0ff;
+  transition: all 0.3s ease-in-out;
+}
+
+body.retro .post-card:hover {
+  background-color: #0ff;
+  color: #111;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 18px #0ff, 0 0 6px #f0f;
+}
