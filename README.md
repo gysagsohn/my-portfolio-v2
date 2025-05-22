@@ -33,6 +33,7 @@ This portfolio draws inspiration from several developer portfolios and templates
 - **[DeveloperFolio](https://developerfolio.js.org/)** – Functionality, React structure, and customisability.
 - **[Josh Comeau](https://www.joshwcomeau.com/)** – Interactivity, playful design, and narrative-driven content.
 - **[Brittany Chiang](https://v4.brittanychiang.com/)** – Layout structure and clean professional aesthetic.
+  > The TARDIS easter egg in my footer is inspired by the fun link on her site — a brilliant touch of personality.
 - **[Harnish Design – Callum Template](https://harnishdesign.net/demo/react/callum/demo/)** – Full-screen menu, transitions, and skill display features.
 
 ---
@@ -64,9 +65,12 @@ Planned tools and technologies:
 - Custom breakpoints used for tablet and mobile views:
   - `max-width: 1500px`, `1200px`, `1000px`, `800px`, `500px`
 - Global-media.css manages responsive layout overrides for all pages
-+ Sticky share menu repositions for mobile (right side under header)
-+ Blog tabs stack vertically on small screens (<500px)
-+ Terminal box and heading scale on mobile (max-width: 80–75%)
+- Sticky share menu repositions for mobile (right side under header)
+- Blog tabs stack vertically on small screens (<500px)
+- Terminal box and heading scale on mobile (max-width: 80–75%)
+-  **TARDIS Footer Link:** Click the TARDIS icon in the footer to travel back to my v1 portfolio.
+- 👾 **Retro Mode:** Cycle the theme toggle to unlock a neon pixel world.
+-  **Terminal Greeting:** Custom-coded VS Code-style typing effect greets you at the top.
 
 ## 🎨 Theme Modes
 
@@ -356,15 +360,9 @@ An optional enhancement idea for visual punch:
   - Code animation breakdown
   - Notes on alternate `Typewriter` styles (multi-line greeting variant)
 
-### In Progress / Next
-
-
-- [ ] Add scroll-based animation using AOS or Framer Motion
-- [ ] Add markdown rendering and routing for blog posts
-
 ## 🚀 Live Demo
 
-Coming soon – will be deployed to [Netlify](gysohn.com)
+Live now at [gysohn.com](https://gysohn.com)
 
 ---
 
@@ -374,6 +372,8 @@ Coming soon – will be deployed to [Netlify](gysohn.com)
   "Loosely designed in Figma and coded in Visual Studio Code by yours truly. Built with React and deployed with Netlify. Typeface: Inter."
 
 - Save the retro link/TARDIS easter egg idea for version 2.1
+- Easter egg idea inspired by Brittany Chiang’s hidden retro link — loved the subtle nod to creativity and nostalgia.
+
 - Consider blog posts as markdown or hardcoded components for now
 
 ## 🧠 Terminal-Style Typing Animation (Hero Section)
