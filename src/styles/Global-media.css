@@ -72,6 +72,7 @@ main {
     text-align: center;
     gap: var(--space-md);
     padding: var(--space-md);
+    min-height: 90vh;
   }
 
   .hero-text {
@@ -245,6 +246,10 @@ main {
 
 /* === Extra Narrow View: ≤800px === */
 @media (max-width: 800px) {
+  .hero-row {
+    min-height: 95vh;
+  }
+
   .about-section,
   .skills-section {
     max-width: 90%;
@@ -253,6 +258,12 @@ main {
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xxl);
+  }
+
+  .home-main-grid {
+    margin-top: var(--space-lg);
   }
 
   .contact-links {
