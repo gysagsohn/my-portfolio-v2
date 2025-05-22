@@ -2,6 +2,7 @@
 @import './styles/theme.css';
 @import './styles/buttons.css';
 @import './styles/global-media.css';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
   margin: 0;

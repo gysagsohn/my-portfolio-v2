@@ -46,3 +46,24 @@
   color: var(--text-primary);
   transform: scale(1.05);
 }
+
+body.retro .cta-button,
+body.retro .cta-button-outline {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #000;
+  color: #0ff;
+  border: 2px solid #0ff;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  box-shadow: 0 0 6px #0ff;
+  transition: all 0.2s ease-in-out;
+}
+
+body.retro .cta-button:hover,
+body.retro .cta-button-outline:hover {
+  background-color: #0ff;
+  color: #000;
+  box-shadow: 0 0 12px #0ff, 0 0 4px #f0f inset;
+  transform: scale(1.03);
+}
