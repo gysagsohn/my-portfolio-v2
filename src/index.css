@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-@import './styles/Theme.css';
-@import './styles/Buttons.css';
-@import './styles/Global-media.css';
+@import './styles/theme1.css';
+@import './styles/buttons1.css';
+@import './styles/buttons1.css';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
