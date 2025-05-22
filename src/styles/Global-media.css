@@ -6,12 +6,11 @@
   }
 }
 
-/* Temporarily disabled spacing for narrower layout refinement */
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
   main {
-  padding-top: calc(var(--space-xxl) + var(--space-xl));
+    padding-top: var(--space-xxl);
   }
-} */
+}
 
 @media (max-width: 500px) {
   main {
