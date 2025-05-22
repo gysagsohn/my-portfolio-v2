@@ -64,7 +64,9 @@ Planned tools and technologies:
 - Custom breakpoints used for tablet and mobile views:
   - `max-width: 1500px`, `1200px`, `1000px`, `800px`, `500px`
 - Global-media.css manages responsive layout overrides for all pages
-- Components adapt layout and spacing based on screen size
++ Sticky share menu repositions for mobile (right side under header)
++ Blog tabs stack vertically on small screens (<500px)
++ Terminal box and heading scale on mobile (max-width: 80–75%)
 
 ## 🎨 Theme Modes
 
@@ -331,6 +333,11 @@ An optional enhancement idea for visual punch:
 - ✅ Loop resets for continuous animation
 - ✅ Idea credit: **Ben** — thanks for the inspiration!
 + ✅ Finalised visual styling for dark mode theme
++ ✅ Finalised responsive spacing and layout for phone and tablet (Global-media.css)
++ ✅ Built responsive mobile/touch-friendly sticky share menu in blog posts
++ ✅ Improved mobile blog card grid and blog tab layout
++ ✅ Added conditional styling for blog post title/subheading and terminal box on smaller screens
++ ✅ Fully mobile-audited the homepage layout, hero section, and CTA button spacing
 
 - ✅ Built the **Contact Page**:
   - Minimal, theme-aligned layout with:
@@ -351,12 +358,8 @@ An optional enhancement idea for visual punch:
 
 ### In Progress / Next
 
-- [ ] Finalise visual styling for dark mode theme
-- [ ] Blog page layout and project post content
-- [ ] Blog cards with filters and tag system
+
 - [ ] Add scroll-based animation using AOS or Framer Motion
-- [ ] Mobile-first audit and UI polish
-- [ ] Write blog post about the terminal animation process
 - [ ] Add markdown rendering and routing for blog posts
 
 ## 🚀 Live Demo

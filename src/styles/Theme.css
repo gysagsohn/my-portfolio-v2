@@ -32,7 +32,8 @@
   --space-lg: 32px;
   --space-xl: 64px;
   --space-xxl: 96px;
-
+  --space-xxxl: 128px;
+  
   /* === NEW for Terminal Styling === */
   --code-background: #1e1e1e;   /* VS Code dark background */
   --code-text: #D4D4D4;         /* Light grey text */
