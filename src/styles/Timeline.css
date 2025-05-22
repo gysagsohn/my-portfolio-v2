@@ -40,7 +40,7 @@
   margin-top: var(--space-md);
 }
 
-/* Hover effect for timeline cards */
+/* === Timeline Card Hover Effect (applies to both views) === */
 .timeline-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -49,100 +49,142 @@
   transform: translateY(-4px);
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
 }
-/* === Hide Mobile Scroll View on Desktop === */
-@media (min-width: 641px) {
-  .milestone-horizontal-wrapper,
-  .timeline-button {
+
+/* === Horizontal Scroll Styling === */
+.milestone-horizontal-wrapper {
+  position: relative;
+  padding: var(--space-md);
+  display: none; 
+}
+
+/* Only show horizontal timeline below 1200px */
+@media (max-width: 1200px) {
+  .milestone-horizontal-wrapper {
+    display: block;
+  }
+
+  .milestone-vertical-wrapper {
     display: none;
   }
 }
 
+.milestone-horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
 
-/* === Mobile View: Horizontal Scroll === */
-@media (max-width: 640px) {
-  .milestone-vertical-wrapper {
-    display: none;
-  }
+.milestone-horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
 
-  .milestone-horizontal-wrapper {
-    display: block;
-    position: relative;
-    padding: var(--space-md);
-  }
+.milestone-horizontal-card {
+  flex: 0 0 auto;
+  min-width: 280px;
+  max-width: 320px;
+  background-color: var(--background-colour);
+  padding: var(--space-md);
+  border-radius: var(--space-sm);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  scroll-snap-align: center;
+}
 
-  .milestone-horizontal-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: var(--space-lg);
-    padding: var(--space-md) 0;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-  }
+/*  Add missing styles for year in horizontal scroll */
+.milestone-horizontal-card .milestone-year {
+  font-size: var(--small-size);
+  font-weight: var(--heading-weight);
+  color: var(--accent-button);
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-body);
+}
 
-  .milestone-horizontal-scroll::-webkit-scrollbar {
-    display: none;
-  }
+.milestone-horizontal-card h4 {
+  font-size: var(--h3-size);
+  margin-bottom: var(--space-xs);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+}
 
-  .milestone-horizontal-card {
-    flex: 0 0 auto;
-    min-width: 280px;
-    max-width: 320px;
-    background-color: var(--background-colour);
-    padding: var(--space-md);
-    border-radius: var(--space-sm);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    scroll-snap-align: center;
-  }
+.milestone-horizontal-card p {
+  font-size: var(--small-size);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
 
-  .milestone-horizontal-card h4 {
-    font-size: var(--h3-size);
-    margin-bottom: var(--space-xs);
-    color: var(--text-secondary);
-    font-family: var(--font-heading);
-  }
+/* === Horizontal Scroll Progress Bar === */
+.timeline-progress-container {
+  height: 6px;
+  width: 100%;
+  background-color: var(--hover-colour);
+  border-radius: 999px;
+  margin-top: var(--space-sm);
+  overflow: hidden;
+  pointer-events: none;
+}
 
-  .milestone-horizontal-card p {
-    font-size: var(--small-size);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-  }
+.timeline-progress-bar {
+  height: 100%;
+  background-color: var(--accent-button);
+  border-radius: 999px;
+  transition: width 0.2s ease-in-out;
+}
 
+/* === Horizontal Scroll Buttons (absolute layout for >500px) === */
+.timeline-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--hover-colour);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.timeline-button.left {
+  left: 1rem;
+}
+
+.timeline-button.right {
+  right: 1rem;
+}
+
+.timeline-button:hover {
+  transform: scale(1.05);
+  background-color: var(--accent-button);
+}
+
+/* === Button Row (hidden by default) === */
+.timeline-button-row {
+  display: none;
+}
+
+/* === On mobile: hide inline buttons, show top row === */
+@media (max-width: 500px) {
   .timeline-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background-color: var(--hover-colour);
-    border: none;
-    border-radius: 50%;
-    padding: 0.75rem;
-    cursor: pointer;
-    color: var(--text-primary);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    display: none;
   }
 
-  .timeline-button.left {
-    left: 1rem;
+  .timeline-button-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--space-md);
+    margin-bottom: var(--space-sm);
+    gap: var(--space-sm);
   }
 
-  .timeline-button.right {
-    right: 1rem;
-  }
-
-  .timeline-progress-container {
-    height: 6px;
-    width: 100%;
-    background-color: #e6e6e6;
-    border-radius: 999px;
-    margin-top: var(--space-sm);
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .timeline-progress-bar {
-    height: 100%;
-    background-color: var(--accent-button);
-    border-radius: 999px;
-    transition: width 0.2s ease-in-out;
+  .timeline-button-row .timeline-button {
+    display: inline-flex;
+    position: static;
+    transform: none;
+    margin: 0;
   }
 }

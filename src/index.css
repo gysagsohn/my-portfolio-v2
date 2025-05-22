@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 @import './styles/theme.css';
 @import './styles/buttons.css';
+@import './styles/global-media.css';
 
 body {
   margin: 0;
@@ -14,3 +15,4 @@ body {
   margin: 0 auto;
   padding: var(--space-lg);
 }
+
