@@ -64,12 +64,23 @@ function Timeline() {
 
       {/* === Mobile Horizontal Timeline === */}
       <div className="milestone-horizontal-wrapper">
-        <button className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
+        {/* Always render buttons, styling will handle visibility */}
+        <div className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
           <HiOutlineChevronLeft size={24} />
-        </button>
-        <button className="timeline-button right" onClick={() => scrollByCard(1)} aria-label="Scroll Right">
+        </div>
+        <div className="timeline-button right" onClick={() => scrollByCard(1)} aria-label="Scroll Right">
           <HiOutlineChevronRight size={24} />
-        </button>
+        </div>
+
+        {/* Row button fallback for mobile */}
+        <div className="timeline-button-row">
+          <button className="timeline-button left" onClick={() => scrollByCard(-1)} aria-label="Scroll Left">
+            <HiOutlineChevronLeft size={24} />
+          </button>
+          <button className="timeline-button right" onClick={() => scrollByCard(1)} aria-label="Scroll Right">
+            <HiOutlineChevronRight size={24} />
+          </button>
+        </div>
 
         <div className="milestone-horizontal-scroll" ref={scrollRef}>
           {timelineData.map((item, index) => (

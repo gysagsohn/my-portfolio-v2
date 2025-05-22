@@ -13,6 +13,8 @@ function Header() {
     return localStorage.getItem('theme') === 'dark';
   });
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     document.body.classList.toggle('dark', darkMode);
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
@@ -20,6 +22,10 @@ function Header() {
 
   const toggleDarkMode = () => {
     setDarkMode(prev => !prev);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
   };
 
   return (
@@ -34,6 +40,8 @@ function Header() {
           {darkMode ? '☀️' : '🌙'}
         </button>
       </div>
+
+      {/* Desktop Nav */}
       <nav className="navbar-box">
         {navItems.map(({ name, to }) => (
           <NavLink
@@ -47,6 +55,29 @@ function Header() {
           </NavLink>
         ))}
       </nav>
+
+      {/* Mobile Nav Toggle */}
+      <div className="mobile-menu-wrapper">
+        <button className="mobile-menu-toggle" onClick={toggleMenu} aria-expanded={menuOpen}>
+          Menu {menuOpen ? '▲' : '▼'}
+        </button>
+        {menuOpen && (
+          <nav className="mobile-nav-links">
+            {navItems.map(({ name, to }) => (
+              <NavLink
+                key={to}
+                to={to}
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link'
+                }
+              >
+                {name}
+              </NavLink>
+            ))}
+          </nav>
+        )}
+      </div>
     </header>
   );
 }
