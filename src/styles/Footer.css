@@ -1,25 +1,31 @@
+/* === Footer Layout === */
 .site-footer {
   background-color: var(--background-colour);
   padding: var(--space-md) var(--space-lg);
   border-top: 1px solid #ccc;
   font-size: 0.95rem;
   color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
   position: relative;
 }
 
 .footer-top {
-  text-align: right;
-  margin-bottom: var(--space-sm);
+  align-self: flex-end;
 }
 
-.back-to-top {
+.mini-button {
   font-weight: 500;
+  background: none;
+  border: none;
   color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.back-to-top:hover {
+.mini-button:hover {
   color: var(--accent-button);
   text-decoration: underline;
 }
@@ -27,4 +33,62 @@
 .footer-content {
   text-align: center;
   line-height: 1.8;
+}
+
+/* === TARDIS Easter Egg === */
+.tardis-easter-egg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: var(--space-sm);
+}
+
+.tardis-icon {
+  width: 44px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-left: var(--space-sm);
+}
+
+.tardis-icon:hover {
+  transform: scale(1.1);
+}
+
+.tardis-menu {
+  margin-left: var(--space-sm);
+  background-color: var(--background-colour);
+  color: var(--text-secondary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--space-xs);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  font-size: var(--small-size);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.tardis-menu a {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+.tardis-menu a:hover {
+  color: var(--accent-button);
+}
+
+/* === Responsive: ≤800px === */
+@media (max-width: 800px) {
+  .tardis-easter-egg {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .tardis-menu {
+    margin: var(--space-xs) 0 0 0;
+  }
 }
