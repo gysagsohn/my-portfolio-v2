@@ -275,7 +275,7 @@
 
 .timeline-column .section-heading {
   text-align: left;
-  padding-left: 250px;
+  margin-left: 250px;
 }
 
 /* === SYNTAX HIGHLIGHTING === */
@@ -285,3 +285,9 @@
 .code-method { color: #DCDCAA; }
 .code-string { color: #CE9178; }
 
+@media (max-width: 1200px) {
+  .timeline-column .section-heading {
+    margin-left: 0;
+    text-align: center;
+  }
+}

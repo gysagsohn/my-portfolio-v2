@@ -48,17 +48,20 @@ function Header() {
       </div>
 
       {/* Desktop Nav */}
-      <nav className="navbar-box">
-        {navItems.map(({ name, to }, index) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              isActive ? 'nav-link active nav-piped' : 'nav-link nav-piped'
-            }
-          >
-            <span className="nav-text">{name}</span>
-          </NavLink>
+      <nav className="navbar-box grouped-nav">
+        {navItems.map(({ name, to },) => (
+          <div key={to} className="nav-item-group">
+            <NavLink
+              to={to}
+              className={({ isActive }) =>
+                isActive ? 'nav-link active with-pipes' : 'nav-link'
+              }
+            >
+              <span className="pipe left" aria-hidden="true">|</span>
+              <span className="nav-text">{name}</span>
+              <span className="pipe right" aria-hidden="true">|</span>
+            </NavLink>
+          </div>
         ))}
       </nav>
 
