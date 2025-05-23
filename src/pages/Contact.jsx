@@ -24,7 +24,7 @@ function Contact() {
   // Display text for each contact method
   const displayMap = {
     email: 'gysagsohn@hotmail.com',
-    linkedin: 'https://www.linkedin.com/in/gysagsohn/',
+    linkedin: 'https://www.linkedin.com/in/gysohn/',
     instagram: '@gysagsohn',
   };
 

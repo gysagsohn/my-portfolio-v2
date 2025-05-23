@@ -1,13 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import tardisImg from '../assets/tardis.png';
 import '../styles/Footer.css';
 
 function Footer() {
   const [showTardisMenu, setShowTardisMenu] = useState(false);
+  const tardisRef = useRef();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (
+        tardisRef.current &&
+        !tardisRef.current.contains(e.target)
+      ) {
+        setShowTardisMenu(false);
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   return (
     <footer className="site-footer">
@@ -24,12 +39,12 @@ function Footer() {
       </div>
 
       {/*  TARDIS Easter Egg */}
-      <div className="tardis-easter-egg">
+      <div className="tardis-easter-egg" ref={tardisRef}>
         <img
           src={tardisImg}
           alt="TARDIS"
           className="tardis-icon"
-          onClick={() => setShowTardisMenu(!showTardisMenu)}
+          onClick={() => setShowTardisMenu((prev) => !prev)}
         />
         {showTardisMenu && (
           <div className="tardis-menu">

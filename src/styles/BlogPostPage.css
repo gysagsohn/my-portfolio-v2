@@ -71,6 +71,14 @@
   padding: 2px 6px;
   border-radius: var(--space-xs);
   white-space: nowrap;
+  animation: fadeInOut 2s ease-in-out; 
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-2px); }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-2px); }
 }
 
 /* === Blog Content === */
