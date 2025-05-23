@@ -3,9 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import '../styles/Header.css';
 
 const navItems = [
-  { name: '| Home |', to: '/' },
-  { name: '| Blog |', to: '/blog' },
-  { name: '| Contact |', to: '/contact' },
+  { name: 'Home', to: '/' },
+  { name: 'Blog', to: '/blog' },
+  { name: 'Contact', to: '/contact' },
 ];
 
 function Header() {
@@ -49,15 +49,15 @@ function Header() {
 
       {/* Desktop Nav */}
       <nav className="navbar-box">
-        {navItems.map(({ name, to }) => (
+        {navItems.map(({ name, to }, index) => (
           <NavLink
             key={to}
             to={to}
             className={({ isActive }) =>
-              isActive ? 'nav-link active' : 'nav-link'
+              isActive ? 'nav-link active nav-piped' : 'nav-link nav-piped'
             }
           >
-            {name}
+            <span className="nav-text">{name}</span>
           </NavLink>
         ))}
       </nav>

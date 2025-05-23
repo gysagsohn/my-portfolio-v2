@@ -6,13 +6,15 @@
   
   .not-found h1 {
     font-size: 3rem;
-    color: #FF4500;
+    color: var(--accent-button);
     margin-bottom: var(--space-md);
+    font-family: var(--font-heading);
   }
   
   .not-found p {
     font-size: 1.2rem;
     margin-bottom: var(--space-md);
+    font-family: var(--font-body);
   }
   
   .hellfire-icon {
@@ -26,8 +28,16 @@
     text-decoration: underline;
     color: var(--text-secondary);
     font-weight: 600;
+    font-family: var(--font-body);
+
   }
-  
+
+
+  .back-home:hover {
+  color: var(--accent-button);
+  text-decoration: none;
+  }
+
   @keyframes flicker {
     0% { opacity: 0.8; transform: scale(1); }
     100% { opacity: 1; transform: scale(1.05); }

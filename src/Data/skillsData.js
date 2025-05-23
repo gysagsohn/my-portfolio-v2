@@ -11,6 +11,8 @@ import {
   SiReact,
 } from 'react-icons/si';
 
+// Skills displayed in SkillsSection (icon + label)
+
 import { FaBalanceScale } from 'react-icons/fa';
 
 export const skills = [

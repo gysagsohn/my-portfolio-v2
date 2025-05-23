@@ -1,9 +1,16 @@
+/* === Vertical Timeline Layout === */
 .milestone-vertical-item {
   position: relative;
   display: flex;
   align-items: flex-start;
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
+}
+
+.milestone-dot-wrapper {
+  position: relative;
+  width: 0;
+  height: 100%;
 }
 
 .milestone-vertical-dot {
@@ -14,13 +21,8 @@
   height: 20px;
   background-color: var(--accent-button); /* Amber */
   border-radius: 50%;
-  box-shadow: 0 0 0 5px var(--hover-colour); /* Thick indigo outline */
+  box-shadow: 0 0 0 5px var(--hover-colour); /* Indigo outline */
   z-index: 3;
-}
-.milestone-dot-wrapper {
-  position: relative;
-  width: 0; /* Prevents layout shifting */
-  height: 100%;
 }
 
 .timeline-card {
@@ -29,17 +31,15 @@
   border-radius: var(--space-sm);
   padding: var(--space-lg) var(--space-xl);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  font-family: var(--font-body);
+  font-family: var(--font-body); /* Inter */
   text-align: left;
   max-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-card .milestone-year {
-  font-size: var(--small-size);
-  font-weight: var(--heading-weight);
-  color: var(--accent-button); /* Amber */
-  margin-bottom: var(--space-xs);
-  font-family: var(--font-body); /* Inter */
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
 }
 
 .timeline-card h4 {
@@ -47,6 +47,14 @@
   font-family: var(--font-heading); /* Poppins */
   font-weight: var(--heading-weight);
   color: var(--text-secondary); /* Indigo */
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-card .milestone-year {
+  font-size: var(--small-size);
+  font-family: var(--font-body); /* Inter */
+  font-weight: var(--heading-weight);
+  color: var(--accent-button); /* Amber */
   margin-bottom: var(--space-xs);
 }
 

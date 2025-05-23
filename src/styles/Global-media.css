@@ -58,6 +58,7 @@
     margin-top: var(--space-md);
     margin-bottom: var(--space-md);
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .scroll-down-indicator {

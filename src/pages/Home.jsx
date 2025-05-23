@@ -118,7 +118,7 @@ function Home() {
       {/* === HERO SECTION === */}
       <section className="hero-row" ref={heroRef}>
         <div className="hero-image-block">
-          <p className="tagline">Ok! Let's do this</p>
+          {/* <p className="tagline">Ok! Let's do this</p> */}
           <img src={logo} alt="Gy Sohn smiling" className="hero-image" />
         </div>
 
@@ -176,13 +176,16 @@ function Home() {
             <p className="about-text intro-line">I didn’t start in tech and that’s my edge.</p>
             <p className="about-text">
               I kicked off my career in law and construction ops, where getting things done (properly) wasn’t optional. 
-              Now, I bring that same problem-solving drive into building web apps ones that actually make work easier, not harder.
+              Now, I bring that same problem-solving drive into building web apps — ones that actually make work easier, not harder.
             </p>
             <p className="about-text">
               I like working on products that feel sharp and helpful. I’m a fan of clean code, decent coffee, and honest conversations.
             </p>
-            <div className="about-cta-group">
-              <p className="about-cta-highlight">→ Liking what you're seeing?</p>
+
+            <div className="about-cta-group" >
+              <p className="about-cta-highlight">
+                → Do you like what you see? Let's connect and we can discuss more over a coffee.
+              </p>
               <Button className="cta-button" link="/contact">Let’s Connect</Button>
             </div>
           </div>

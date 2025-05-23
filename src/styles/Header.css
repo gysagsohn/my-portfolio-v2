@@ -1,3 +1,4 @@
+/* === SITE HEADER LAYOUT === */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -5,7 +6,6 @@
   padding: var(--space-sm) var(--space-lg);
 }
 
-/* Logo & Toggle Group */
 .header-left {
   display: flex;
   align-items: center;
@@ -20,12 +20,10 @@
   font-family: var(--font-heading);
   transition: color 0.2s ease-in-out;
 }
-
 .logo:hover {
   color: var(--accent-button);
 }
 
-/* Toggle button next to logo */
 .dark-toggle {
   background: none;
   border: none;
@@ -34,26 +32,19 @@
   color: var(--text-secondary);
   transition: color 0.2s ease-in-out;
 }
-
 .dark-toggle:hover {
   color: var(--accent-button);
 }
 
+/* === DESKTOP NAV === */
 .navbar-box {
   display: flex;
-  gap: var(--space-md);
+  align-items: center;
   background-color: var(--background-colour);
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.5rem 1rem;
-  font-family: var(--font-family);
-}
-
-.navbar-box a {
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--text-secondary);
-  transition: color 0.2s ease-in-out;
+  font-family: var(--font-heading);
 }
 
 .nav-link {
@@ -61,29 +52,42 @@
   font-weight: 500;
   color: var(--text-secondary);
   padding: 0.5rem 1rem;
-  /* border-radius: 8px; */
   transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-/* On hover */
 .nav-link:hover {
-  color: var(--accent-button); /* Gold on hover */
-  background-color: transparent; /* Ensure no background */
+  color: var(--accent-button);
 }
-
 .nav-link.active {
   color: var(--accent-button);
   font-weight: 600;
-  background-color: transparent;
 }
 
+/* Pipe styling (clickable part of the link) */
+.nav-text::before,
+.nav-text::after {
+  content: '|';
+  color: var(--text-secondary);
+  margin: 0 0.5rem;
+  color: inherit;
+}
+.nav-text {
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
 
+/* === MOBILE NAV === */
 .mobile-menu-wrapper {
   display: none;
 }
-
-/* === Responsive Header: Tablet & Mobile Nav Behaviour === */
 @media (max-width: 1200px) {
+  .navbar-box {
+    display: none;
+  }
+
   .mobile-menu-wrapper {
     display: flex;
     flex-direction: column;
@@ -91,72 +95,43 @@
     gap: var(--space-xs);
   }
 
-  .navbar-box {
-    display: none;
+  .mobile-menu-toggle {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  .mobile-menu-toggle:hover {
+    color: var(--accent-button);
+    transform: scale(1.05);
   }
 
-  /* === Mobile Menu Toggle Button === */
-.mobile-menu-toggle {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease-in-out;
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-xs);
+    padding: var(--space-sm) 0;
+    margin-top: var(--space-xs);
+  }
+
+  .mobile-nav-links .nav-link {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    text-align: right;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  .mobile-nav-links .nav-link:hover {
+    color: var(--accent-button);
+  }
 }
 
-.mobile-menu-toggle:hover {
-  color: var(--accent-button);
-  transform: scale(1.05);
-}
-
-/* === Mobile Nav Dropdown === */
-.mobile-nav-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--space-xs);
-  padding: var(--space-sm) 0;
-  margin-top: var(--space-xs);
-}
-
-.mobile-nav-links .nav-link {
-  font-size: 0.9rem;
-  padding: 0.25rem 0.75rem;
-  text-align: right;
-  width: 100%;
-  transition: all 0.2s ease-in-out;
-}
-
-.mobile-nav-links .nav-link:hover {
-  color: var(--accent-button);
-  background-color: transparent;
-}
-}
-
-/* === Retro Mode Toggle Button === */
-body.retro .dark-toggle {
-  font-family: 'Press Start 2P', cursive;
-  color: #00ffff;
-  background-color: #111;
-  padding: 0.5rem 1rem;
-  border: 2px solid #00ffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px #00ffff;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  transition: all 0.2s ease-in-out;
-}
-
-body.retro .dark-toggle:hover {
-  background-color: #00ffff;
-  color: #111;
-  box-shadow: 0 0 12px #0ff, 0 0 6px #0ff inset;
-}
-
-/* === Retro Mode Header Background === */
+/* === RETRO MODE === */
 body.retro .site-header {
   background: repeating-linear-gradient(
     45deg,
@@ -169,31 +144,22 @@ body.retro .site-header {
   box-shadow: 0 2px 12px rgba(255, 0, 255, 0.3);
 }
 
-/* === Light Mode Hover === */
-body.light .nav-link:hover {
-  color: var(--accent-button);
-  background-color: transparent;
-}
-
-/* === Dark Mode Hover === */
-body.dark .nav-link:hover {
-  color: var(--text-secondary);
-  background-color: var(--hover-colour);
-}
-
-/* === Retro Mode Hover === */
-body.retro .nav-link:hover {
-  color: #ff00ff;
+body.retro .dark-toggle {
+  font-family: 'Press Start 2P', cursive;
+  color: #00ffff;
   background-color: #111;
-  transform: scale(1.05);
-  text-shadow: 1px 1px 0 #0ff, -1px -1px 0 #f0f;
+  padding: 0.5rem 1rem;
+  border: 2px solid #00ffff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px #00ffff;
+  text-transform: uppercase;
+  font-size: 0.75rem;
   transition: all 0.2s ease-in-out;
 }
-
-@keyframes pixelPulse {
-  0% { box-shadow: 0 0 2px #0ff; }
-  50% { box-shadow: 0 0 6px #0ff, 0 0 10px #f0f; }
-  100% { box-shadow: 0 0 2px #0ff; }
+body.retro .dark-toggle:hover {
+  background-color: #00ffff;
+  color: #111;
+  box-shadow: 0 0 12px #0ff, 0 0 6px #0ff inset;
 }
 
 body.retro .mobile-menu-toggle {
@@ -205,4 +171,10 @@ body.retro .mobile-menu-toggle {
   animation: pixelPulse 1.2s infinite;
   text-transform: uppercase;
   font-size: 0.6rem;
+}
+
+@keyframes pixelPulse {
+  0% { box-shadow: 0 0 2px #0ff; }
+  50% { box-shadow: 0 0 6px #0ff, 0 0 10px #f0f; }
+  100% { box-shadow: 0 0 2px #0ff; }
 }

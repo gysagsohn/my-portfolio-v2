@@ -33,7 +33,7 @@
 .post-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(90, 78, 186, 0.85); /* You can make this a --overlay-bg if reused */
+  background: var(--overlay-bg);
   color: var(--background-colour);
   padding: var(--space-md);
   opacity: 0;
