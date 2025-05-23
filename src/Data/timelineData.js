@@ -1,3 +1,6 @@
+// Timeline entries for Timeline component (year, title, description)
+
+
 const timeline = [
   {
     year: "2025 — Present",

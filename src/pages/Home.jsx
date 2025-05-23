@@ -90,7 +90,7 @@ function Home() {
   const latestBlog = sortedPosts.find(post => post.type === 'blog');
   const latestProject = sortedPosts.find(post => post.type === 'project');
 
-  // ✅ Scroll to next section
+  // Scroll to next section
   const scrollToMainSection = () => {
     const section = document.querySelector('.home-main-grid');
     if (section) {
@@ -98,7 +98,7 @@ function Home() {
     }
   };
 
-  // ✅ Fade out scroll arrow
+  // Fade out scroll arrow
   const heroRef = useRef(null);
   const [arrowHidden, setArrowHidden] = useState(false);
 

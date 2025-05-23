@@ -1,12 +1,26 @@
 # Gy Sohn – Portfolio Website (v2)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/39d67db6-2134-498c-bccc-e47a789786d2/deploy-status)](https://app.netlify.com/projects/gysohn/deploys)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
+[![GA4 Enabled](https://img.shields.io/badge/Analytics-GA4%20%2B%20Clarity-informational)](#-tracking--analytics)
+
 Welcome to the version 2 of my personal developer portfolio website. This project is a ground-up rebuild focused on improving visual design, interactivity, and showcasing my growth as a full-stack developer. This site is a fully client-rendered React SPA using React Router, modular components, and a global theme layer built in CSS.
+
+## TL;DR
+
+This is my second portfolio site: built with React + Vite, styled with global theming, and animated with care. It features a terminal-style hero, responsive timeline, full theme toggle (dark/retro), and a custom blog. You can visit it live at [gysohn.com](https://gysohn.com). GA4 + Clarity integrated. Still growing.
 
 ## Live Site
 You can visit the live version of this portfolio at
-🌐 https://gysohn.com/
+https://gysohn.com/
 
-Heads up: it’s still under construction — kind of like a dev site with a hard hat on. Improvements are ongoing, so things may look half-painted (intentionally).
+## Future Plans
+
+- Full-stack blog CMS (MERN stack)
+- Expand blog markdown support
+- Add contact form + validation + change contact form
+
 
 ## Project Purpose
 
@@ -22,7 +36,7 @@ Built with just HTML and CSS, this was my introduction to web dev—and my attem
 Live Site (v1) (https://gysohn-v1.netlify.app/)
 Source Code (https://github.com/gysagsohn/gysohn_T1A2)
 
-It’s simple, nostalgic, and a reminder of how far things have come (and how many divs I’ve closed since).
+It’s simple, nostalgic, and a reminder of how far things have come (and how many divs I’ve closed since). This version will never be taken down, as I am proud of what I did and it is a reminder of how far I have come. 
 
 ---
 
@@ -41,11 +55,11 @@ This portfolio draws inspiration from several developer portfolios and templates
 ## Tech Stack
 
 Planned tools and technologies:
-- **React (Vite or CRA)**
-- **CSS Modules or Tailwind CSS**
+- **React (with Vite)**
+- **CSS Modules and Global CSS Variables**
 - **React Router**
-- **Netlify or Vercel** for deployment
-- **Optional:** Animation libraries (Framer Motion / AOS), custom cursor, blog markdown setup
+- **Netlify** for deployment
+- **Google Analytics + Microsoft Clarity** for tracking
 
 ---
 
@@ -54,10 +68,9 @@ Planned tools and technologies:
 - Global theming using CSS variables (light and dark mode supported)
 - Clean typography and consistent spacing system
 - Modular component structure with React
-- Planned blog integration (Markdown or JSX)
+- Planned blog integration (hardcoded)
 - Styled buttons and interactive hover states
 - Dynamic city detection using IP (via `ipapi.co`)
-- Fun animated wave icon next to the greeting
 - Social icon links (email, LinkedIn, Instagram)
 - Responsive timeline: vertical on desktop, horizontal scroll on mobile
 - Scroll buttons with dynamic positioning (inline or top row)
@@ -71,6 +84,11 @@ Planned tools and technologies:
 -  **TARDIS Footer Link:** Click the TARDIS icon in the footer to travel back to my v1 portfolio.
 - 👾 **Retro Mode:** Cycle the theme toggle to unlock a neon pixel world.
 -  **Terminal Greeting:** Custom-coded VS Code-style typing effect greets you at the top.
+
+## 📊 Tracking & Analytics
+
+- **Google Analytics 4 (GA4):** Tracks visitor traffic, device usage, and page views.
+- **Microsoft Clarity:** Provides heatmaps and full session replays — see how people actually use the site.
 
 ## 🎨 Theme Modes
 
@@ -88,7 +106,6 @@ Bright colours, pixel fonts, flashing buttons, 8-bit nostalgia.
 
 - Desktop: vertical milestone timeline with "Show Full" toggle
 - Mobile/Tablet: horizontal scroll with left/right navigation buttons
-- Auto-updates scroll progress bar with dynamic fill
 - Responsive layout: buttons move to top row on narrow screens
 
 ## Colour Scheme
@@ -161,7 +178,8 @@ src/
 ├── components/
 ├── pages/
 ├── styles/
-├── utils/
+├── data/
+├── functions/
 └── App.jsx
 
 ```
@@ -213,11 +231,6 @@ src/
 - **Font:** 16px, Regular  
 - **Padding:** 12px 24px  
 
-#### Disabled Button
-
-- **Background:** `#E0E0E0`  
-- **Text Colour:** `#A0A0A0`  
-- **Cursor:** `not-allowed`  
 
 #### Transitions
 
@@ -333,15 +346,15 @@ An optional enhancement idea for visual punch:
 - ✅ Created a **terminal-style code animation** in the Hero section:
 - ✅ Styled to mimic VS Code with syntax-highlighted tokens (`const`, `string`, `method`)
 - ✅ Fades each line in with typing animation and blinking cursor
-- ✅ Uses `react-simple-typewriter` with `renderText` for full JSX control
+- ✅ Originally built with react-simple-typewriter, later replaced with a custom JSX parser + animation approach
 - ✅ Loop resets for continuous animation
 - ✅ Idea credit: **Ben** — thanks for the inspiration!
-+ ✅ Finalised visual styling for dark mode theme
-+ ✅ Finalised responsive spacing and layout for phone and tablet (Global-media.css)
-+ ✅ Built responsive mobile/touch-friendly sticky share menu in blog posts
-+ ✅ Improved mobile blog card grid and blog tab layout
-+ ✅ Added conditional styling for blog post title/subheading and terminal box on smaller screens
-+ ✅ Fully mobile-audited the homepage layout, hero section, and CTA button spacing
+- ✅ Finalised visual styling for dark mode theme
+- ✅ Finalised responsive spacing and layout for phone and tablet (Global-media.css)
+- ✅ Built responsive mobile/touch-friendly sticky share menu in blog posts
+- ✅ Improved mobile blog card grid and blog tab layout
+- ✅ Added conditional styling for blog post title/subheading and terminal box on smaller screens
+- ✅ Fully mobile-audited the homepage layout, hero section, and CTA button spacing
 
 - ✅ Built the **Contact Page**:
   - Minimal, theme-aligned layout with:
@@ -360,21 +373,6 @@ An optional enhancement idea for visual punch:
   - Code animation breakdown
   - Notes on alternate `Typewriter` styles (multi-line greeting variant)
 
-## 🚀 Live Demo
-
-Live now at [gysohn.com](https://gysohn.com)
-
----
-
-## Notes to Self
-
-- Add credit line:  
-  "Loosely designed in Figma and coded in Visual Studio Code by yours truly. Built with React and deployed with Netlify. Typeface: Inter."
-
-- Save the retro link/TARDIS easter egg idea for version 2.1
-- Easter egg idea inspired by Brittany Chiang’s hidden retro link — loved the subtle nod to creativity and nostalgia.
-
-- Consider blog posts as markdown or hardcoded components for now
 
 ## 🧠 Terminal-Style Typing Animation (Hero Section)
 

@@ -1,17 +1,17 @@
+/* COLOURS – Light Theme (Default)*/
 :root {
-  /* Existing Variables... */
   --background-colour: #FDFFFC;     /* Ivory White */
   --text-primary: #2E2E2E;          /* Charcoal Soft Black */
   --text-secondary: #5A4EBA;        /* Indigo Light */
   --accent-button: #FFB20F;         /* Amber Gold */
   --hover-colour: #B5A9E9;          /* Soft Purple */
+  --overlay-bg: rgba(90, 78, 186, 0.85);  /* Overlay Purple Tint */
 
-  /* Fonts */
+  /* TYPOGRAPHY */
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'Fira Code', monospace;
 
-  /* Typography Scale */
   --h1-size: 48px;
   --h2-size: 32px;
   --h3-size: 24px;
@@ -25,7 +25,9 @@
   --heading-line-height: 1.2;
   --body-line-height: 1.5;
 
-  /* Spacing Scale (4px system) */
+  /* ===============================
+     📐 SPACING SYSTEM (4px scale)
+     =============================== */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -33,55 +35,56 @@
   --space-xl: 64px;
   --space-xxl: 96px;
   --space-xxxl: 128px;
-  
-  /* === NEW for Terminal Styling === */
+
+  /* CODE BLOCK STYLES */
   --code-background: #1e1e1e;   /* VS Code dark background */
-  --code-text: #D4D4D4;         /* Light grey text */
-  --code-border: #333333;       /* Subtle outline */
-  --code-header: #252526;       /* Faux tab/file header */
+  --code-text: #D4D4D4;
+  --code-border: #333333;
+  --code-header: #252526;
 }
 
-
-  body.dark {
+/* DARK THEM */
+body.dark {
   --background-colour: #121212;
   --text-primary: #f0f0f0;
   --text-secondary: #FFD700;     /* Gold */
   --accent-button: #FF8C00;      /* Dark orange */
-  --hover-colour: #333333;       /* Subtle grey */
+  --hover-colour: #333333;
+  --overlay-bg: rgba(255, 215, 0, 0.85); /* Gold tint */
+
   --code-background: #1e1e1e;
   --code-text: #d4d4d4;
   --code-border: #3c3c3c;
   --code-header: #2c2c2c;
+}
 
-  }
-
-  body.dark .cta-button-outline {
+/* Optional outline button adjustments in dark mode */
+body.dark .cta-button-outline {
   background-color: transparent;
   border: 2px solid var(--accent-button);
   color: var(--accent-button);
-  }
+}
 
-  body.dark .cta-button-outline:hover {
+body.dark .cta-button-outline:hover {
   background-color: var(--accent-button);
   color: var(--background-colour);
   border-color: var(--accent-button);
-  }
+}
 
-
-  body.retro {
+/* RETRO THEME */
+body.retro {
   --background-colour: #1A1A1A;
   --text-primary: #FFFFFF;
-  --text-secondary: #00FFFF;     /* Bright Cyan */
-  --accent-button: #FF00FF;      /* Magenta */
-  --hover-colour: #FFEE00;       /* Yellow */
+  --text-secondary: #00FFFF;
+  --accent-button: #FF00FF;
+  --hover-colour: #FFEE00;
+  --overlay-bg: rgba(0, 255, 255, 0.85); /* Neon cyan tint */
+
+  --font-heading: 'Press Start 2P', monospace;
+  --font-body: 'Press Start 2P', monospace;
 
   --code-background: #000000;
   --code-text: #00FF00;
   --code-border: #444444;
   --code-header: #222222;
-  }
-
-  body.retro {
-  --font-heading: 'Press Start 2P', monospace;
-  --font-body: 'Press Start 2P', monospace;
-  }
+}
