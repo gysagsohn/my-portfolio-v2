@@ -156,6 +156,9 @@
   .terminal-box {
   max-width: 90%;
   min-height: 250px;
+  white-space: pre-wrap;       /* Keeps line breaks but allows wrapping */
+  word-break: break-word;      /* Forces long strings to break inside box */
+  overflow-wrap: break-word;   /* Ensures proper wrapping on all browsers */
   }
 
   .subheading {
@@ -184,9 +187,10 @@
   max-width: 75%;
   }
 
+
   .terminal-box {
-  max-width: 80%;
-  min-height: 250px;
+  max-width: 70%;
+  min-height: 300px;
   }
 
   .blog-grid {
@@ -195,4 +199,12 @@
   justify-content: center;
   }
 
+}
+
+/* === Mobile View: ≤350px === */
+@media (max-width: 350px) {
+
+    .terminal-box {
+    min-height: 350px;
+  }
 }
