@@ -207,4 +207,23 @@
     .terminal-box {
     min-height: 350px;
   }
+<<<<<<< HEAD
+=======
+
+  .home-main-grid {
+    margin:auto;
+    padding: var(--space-sm);
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .timeline-column,
+  .preview-column,
+  .about-section,
+  .skills-section {
+    margin: 0;
+    padding: var(--space-sm);;
+    max-width: 90%;
+  }
+>>>>>>> 50d1ac2 (fix: mobile view 350px)
 }
