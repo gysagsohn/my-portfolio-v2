@@ -1,11 +1,13 @@
-
 /* === Tablet & Below: ≤1200px === */
+/* Applies to screens 1200px wide or less */
 @media (max-width: 1200px) {
 
+  /* Adjust top margin for home page */
   .home-page {
     margin-top: calc(var(--space-xxxl) + var(--space-xl));
   }
 
+  /* Stack hero section vertically and center-align */
   .hero-row {
     flex-direction: column;
     align-items: center;
@@ -17,17 +19,20 @@
     align-items: center;
   }
 
+  /* Scale down hero image */
   .hero-image {
     width: 320px;
     height: 320px;
   }
 
+  /* Resize terminal box for better fit */
   .terminal-box {
     font-size: 1rem;
     max-width: 90%;
     min-height: 200px;
   }
 
+  /* Make CTA buttons wrap and center-align */
   .cta-buttons {
     justify-content: center;
     gap: var(--space-sm);
@@ -37,30 +42,36 @@
     align-items: center;
   }
 
+  /* Hide scroll-down arrow for tablets and smaller */
   .scroll-down-indicator {
     display: none;
   }
 
+  /* Stack grid layout vertically */
   .home-main-grid {
     flex-direction: column;
     gap: var(--space-xl);
   }
 
+  /* Make each column take full width */
   .timeline-column,
   .content-column {
     width: 100%;
   }
 
+  /* Center preview column */
   .preview-column {
     flex-direction: column;
     align-items: center;
   }
 
+  /* Shrink post cards in preview column */
   .preview-column .post-card {
     width: 90%;
     max-width: 320px;
   }
 
+  /* Center and constrain width for about/skills sections */
   .about-section,
   .skills-section {
     padding: var(--space-md);
@@ -70,18 +81,22 @@
     margin-right: auto;
   }
 
+  /* Center footer text */
   .footer-top {
     text-align: center;
     margin-bottom: var(--space-sm);
   }
 
+  /* Add padding to bottom of footer */
   .site-footer {
     padding-bottom: var(--space-xl);
   }
 }
 
-/* === Tablet & Below: ≤1000px === */
+
+/* === Tablet View: Between 1000px and 1100px === */
 @media (max-width: 1100px) and (min-width: 1000px) {
+  /* Adjust spacing for intermediate screen widths */
   .home-page {
     margin-top: var(--space-xl);
   }
@@ -96,13 +111,18 @@
   }
 }
 
+
 /* === Narrow View: ≤900px === */
+/* Targeting smaller tablets and large phones */
 @media (max-width: 900px) {
+
+  /* Shrink hero image */
   .hero-image {
     width: 280px;
     height: 280px;
   }
 
+  /* Reduce top margin on home */
   .home-page {
    margin-top: var(--space-lg);
   }
@@ -112,30 +132,37 @@
     margin-bottom: var(--space-lg);
   }
 
-  .home-main-grid{
+  /* Add top margin to grid */
+  .home-main-grid {
     margin-top: var(--space-sm);
   }
 
+  /* Stack CTA buttons vertically */
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
 
+  /* Adjust spacing around contact links */
   .contact-links {
     margin-top: var(--space-xl);
     margin-bottom: var(--space-xxl);
   }
 
+  /* Let about and skills sections expand naturally */
   .about-section,
   .skills-section {
     max-width: 90%;
   }
 }
 
+
 /* === Mobile View: ≤500px === */
+/* Styling for phones and small screens */
 @media (max-width: 500px) {
 
-  .hero-i50mage {
+  /* Shrink hero image (NOTE: class has typo 'hero-i50mage') */
+  .hero-image {
     width: 240px;
     height: 240px;
   }
@@ -153,21 +180,24 @@
     margin-bottom: var(--space-xxl);
   }
 
+  /* Adjust terminal box to prevent text overflow */
   .terminal-box {
-  max-width: 90%;
-  min-height: 250px;
-  white-space: pre-wrap;       /* Keeps line breaks but allows wrapping */
-  word-break: break-word;      /* Forces long strings to break inside box */
-  overflow-wrap: break-word;   /* Ensures proper wrapping on all browsers */
+    max-width: 90%;
+    min-height: 250px;
+    white-space: pre-wrap;       
+    word-break: break-word;      
+    overflow-wrap: break-word;   
   }
 
+  /* Center subheading */
   .subheading {
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 
+  /* Stack blog tabs vertically */
   .blog-tabs {
     flex-direction: column;
     align-items: center;
@@ -180,50 +210,52 @@
   }
 }
 
-/* === Mobile View: ≤400px === */
+
+/* === Small Mobile View: ≤400px === */
 @media (max-width: 400px) {
 
+  /* Reduce subheading width further */
   .subheading {
-  max-width: 75%;
+    max-width: 75%;
   }
 
-
+  /* Increase terminal box height for small screens */
   .terminal-box {
-  max-width: 70%;
-  min-height: 300px;
+    max-width: 70%;
+    min-height: 300px;
   }
 
+  /* Add side padding to blog grid */
   .blog-grid {
-  padding-left: var(--space-md);
-  padding-right: var(--space-md);
-  justify-content: center;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    justify-content: center;
   }
-
 }
 
-/* === Mobile View: ≤350px === */
+
+/* === Extra Small Mobile View: ≤350px === */
+/* Optimizing for very small screen phones */
 @media (max-width: 350px) {
 
-    .terminal-box {
+  .terminal-box {
     min-height: 350px;
   }
-<<<<<<< HEAD
-=======
 
   .home-main-grid {
-    margin:auto;
+    margin: auto;
     padding: var(--space-sm);
     max-width: 100%;
     align-items: center;
   }
 
+  /* Tighten margins and padding for compact layout */
   .timeline-column,
   .preview-column,
   .about-section,
   .skills-section {
     margin: 0;
-    padding: var(--space-sm);;
+    padding: var(--space-sm);
     max-width: 90%;
   }
->>>>>>> 50d1ac2 (fix: mobile view 350px)
 }
