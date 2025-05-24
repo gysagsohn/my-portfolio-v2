@@ -89,3 +89,47 @@
   transition: transform 0.2s ease;
 }
 
+
+@media (max-width: 1200px) {
+  .contact-page {
+  margin: var(--space-sm) auto;
+  }
+
+  .contact-heading {
+  margin: var(--space-lg) auto;
+}
+
+.contact-intro {
+  margin: var(--space-md) auto;
+}
+
+.contact-links {
+  margin: var(--space-md) auto;
+}
+
+}
+
+@media (max-width: 400) {
+  .contact-page {
+  text-align: center;
+  /* margin:var(--space-md) auto; */
+  /* padding: var(--space-xl) var(--space-md); */
+}
+
+  .contact-page {
+  margin: var(--space-sm) auto;
+  }
+
+  .contact-heading {
+  margin: var(--space-md) auto;
+}
+
+.contact-intro {
+  margin: var(--space-md) auto;
+}
+
+.contact-links {
+  margin: var(--space-md) auto;
+}
+
+}

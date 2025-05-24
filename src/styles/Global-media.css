@@ -1,40 +1,16 @@
-/* === Global spacing between header and main === */
-/* Desktop uses default spacing from Home.css */
-@media (max-width: 1200px) {
-  main {
-    padding-top: var(--space-xxl);
-  }
-}
-
-@media (max-width: 800px) {
-  main {
-    padding-top: var(--space-xxl);
-  }
-}
-
-@media (max-width: 500px) {
-  main {
-    padding-top: var(--space-xxxl);
-  }
-}
-
-@media (max-width: 400px) {
-  main {
-  padding-top: calc(var(--space-xxxl) + var(--space-xl));
-  }
-}
-
-
 
 /* === Tablet & Below: ≤1200px === */
 @media (max-width: 1200px) {
+
+  .home-page {
+    margin-top: calc(var(--space-xxxl) + var(--space-xl));
+  }
+
   .hero-row {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: var(--space-md);
-    padding: var(--space-md);
-    min-height: 90vh;
+    margin-bottom: calc(var(--space-xxxl) + var(--space-xl));
   }
 
   .hero-text {
@@ -49,7 +25,7 @@
   .terminal-box {
     font-size: 1rem;
     max-width: 90%;
-    min-height: 160px;
+    min-height: 200px;
   }
 
   .cta-buttons {
@@ -104,17 +80,36 @@
   }
 }
 
-/* === Narrow View: ≤800px === */
-@media (max-width: 800px) {
+/* === Tablet & Below: ≤1000px === */
+@media (max-width: 1100px) and (min-width: 1000px) {
+  .home-page {
+    margin-top: var(--space-xl);
+  }
+
+  .hero-row {
+    height: auto;
+    margin: var(--space-xl);
+  }
+
+  .terminal-box {
+    min-height: 200px;
+  }
+}
+
+/* === Narrow View: ≤900px === */
+@media (max-width: 900px) {
   .hero-image {
     width: 280px;
     height: 280px;
   }
 
+  .home-page {
+   margin-top: var(--space-lg);
+  }
+
   .hero-row {
-    min-height: 95vh;
-    /* margin-top: var(--space-xxl);
-    margin-bottom: var(--space-xl); */
+    height: auto;
+    margin-bottom: var(--space-lg);
   }
 
   .home-main-grid{
@@ -139,13 +134,14 @@
 
 /* === Mobile View: ≤500px === */
 @media (max-width: 500px) {
-  .hero-image {
+
+  .hero-i50mage {
     width: 240px;
     height: 240px;
   }
 
   .hero-row {
-    margin-bottom: var(--space-xxxl);
+    margin-bottom: var(--space-lg);
   }
 
   .cta-buttons {
@@ -158,7 +154,8 @@
   }
 
   .terminal-box {
-  max-width: 80%;
+  max-width: 90%;
+  min-height: 250px;
   }
 
   .subheading {
@@ -168,7 +165,7 @@
   text-align: center;
   }
 
-    .blog-tabs {
+  .blog-tabs {
     flex-direction: column;
     align-items: center;
     gap: var(--space-sm);
@@ -183,15 +180,13 @@
 /* === Mobile View: ≤400px === */
 @media (max-width: 400px) {
 
-  .hero-row{
-    margin-bottom:calc(var(--space-xxxl) + var(--space-xl));
-  }
   .subheading {
   max-width: 75%;
   }
 
   .terminal-box {
-  max-width: 75%;
+  max-width: 80%;
+  min-height: 250px;
   }
 
   .blog-grid {

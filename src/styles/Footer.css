@@ -79,17 +79,20 @@
   color: var(--accent-button);
 }
 
-/* === Responsive: ≤800px === */
-@media (max-width: 800px) {
-  .tardis-easter-egg {
-    justify-content: center;
-    flex-direction: column;
+@media (max-width: 1200px) {
+  .site-footer {
     align-items: center;
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-sm);
+    text-align: center;
   }
 
-  .tardis-menu {
-    margin: var(--space-xs) 0 0 0;
+  .footer-content,
+  .footer-top,
+  .tardis-easter-egg {
+    justify-content: center;
+    align-self: center;
+    text-align: center;
   }
 }
+
+
+

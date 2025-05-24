@@ -249,7 +249,7 @@
 
 /* === SKILLS SECTION === */
 .skills-section {
-  margin-top: var(--space-xxl); /
+  margin-top: var(--space--xxl);
   margin-bottom: var(--space-xl);
   padding: var(--space-md);
   background-color: var(--background-colour);
