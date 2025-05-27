@@ -10,8 +10,19 @@ const navItems = [
 
 function Header() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light';
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+
+    // Detect system preference
+    const prefersDark = window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    return prefersDark ? 'dark' : 'light';
   });
+
+  useEffect(() => {
+  console.log(`Theme set to: ${theme}`);
+}, [theme]);
 
   const [menuOpen, setMenuOpen] = useState(false);
 

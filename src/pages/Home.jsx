@@ -18,19 +18,10 @@ const lines = [
 ];
 
 function Home() {
-  const [city, setCity] = useState(null);
   const [showSocials, setShowSocials] = useState(false);
   const [visibleLines, setVisibleLines] = useState([]);
   const [lineIndex, setLineIndex] = useState(0);
   const [charCounts, setCharCounts] = useState([]);
-
-  // IP location fetch for personal greeting
-  useEffect(() => {
-    fetch('https://ipapi.co/json/')
-      .then(res => res.json())
-      .then(data => setCity(data.city || 'your corner of the internet'))
-      .catch(() => setCity('somewhere mysterious'));
-  }, []);
 
   // Animate new line every 1.8s
   useEffect(() => {
@@ -81,10 +72,6 @@ function Home() {
     });
   }
 
-  const renderLocation = () => {
-    if (!city) return '...';
-    return city;
-  };
 
   const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
   const latestBlog = sortedPosts.find(post => post.type === 'blog');
@@ -132,7 +119,6 @@ function Home() {
               </p>
             ))}
           </div>
-          <p className="intro">You’re visiting from {renderLocation()}</p>
 
           <div className="cta-buttons">
             <Button link="/blog" className="cta-button">View My Work</Button>
