@@ -1,7 +1,7 @@
 import careerSwitchImage from '../../assets/careerSwitch.png';
 
 export const careerSwitch = {
-  title: "How I Switched Careers to Code",
+  title: "Why I Switched Careers to Code",
   summary: "From law to construction to code and why it was worth it.",
   image: careerSwitchImage,
   slug: "career-switch",

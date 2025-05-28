@@ -2,7 +2,7 @@ import phase10Image from '../../assets/phase10.png';
 
 export const phase10Tracker = {
   title: "Phase 10 Tracker – One Day Build Gone Rogue",
-  summary: "A quick React project to replace pen-and-paper scoring... that quickly spiralled into a full-blown app.",
+  summary: "A quick React project to replace pen and paper scoring... that quickly spiralled into a full blown app.",
   image: phase10Image,
   slug: "phase-10-tracker",
   date: "2025-05-28",
@@ -10,14 +10,14 @@ export const phase10Tracker = {
   body: `
     <h2>Why I Made It</h2>
     <p>My flatmate and I play a lot of card and board games, and <strong>Phase 10</strong> is one of the few that still needs pen and paper to track scores and phases. I figured I’m a baby coder now, surely I can fix that.</p>
-    <p>I also wanted to try out Material UI (MUI), and this seemed like a fun excuse to build something small and useful. I thought this would be a quick one-day project. So naturally, it spiralled into a full game app.</p>
+    <p>I also wanted to try out Material UI (MUI), and this seemed like a fun excuse to build something small and useful. I thought this would be a quick one day project. So naturally, it spiralled into a full game app.</p>
 
     <h2>Initial Goals</h2>
     <p>I didn’t wireframe or plan too much, but I noted down a few features I wanted:</p>
     <ul>
       <li>Add/edit/remove/reorder players (2–6)</li>
-      <li>Set initial dealer & auto-rotate</li>
-      <li>Round-based phase & score tracking</li>
+      <li>Set initial dealer & auto rotate</li>
+      <li>Round based phase & score tracking</li>
       <li>Editable score table</li>
       <li>Winner detection</li>
       <li>LocalStorage save/load</li>
@@ -44,16 +44,16 @@ export const phase10Tracker = {
     <p>Turns out, building a game tracker, even for a “simple” card game isn’t that simple. I ended up adding:</p>
     <ul>
       <li>Duplicate name prevention</li>
-      <li>Tie-breaker mode (if multiple people finish Phase 10 with the same score, this has never happened to me before, but it is in the rulebook)</li>
+      <li>Tie breaker mode (if multiple people finish Phase 10 with the same score, this has never happened to me before, but it is in the rulebook)</li>
       <li>Confetti animation when someone wins</li>
       <li>Undo round feature with confirmation</li>
       <li>Save/load functionality (with tooltips and overwrite warnings)</li>
       <li>Mobile-friendly UI with responsive layouts</li>
       <li>Modals, snackbars, editable tables…</li>
-      <li>Dealer logic, score validation, auto-scroll to winner</li>
+      <li>Dealer logic, score validation, auto scroll to winner</li>
     </ul>
 
-    <p>And a bunch of things I didn’t even think about until I needed them. This was my first time coding anything game-related, and I’ve gained a new appreciation for how hard it is to define, explain, and enforce rules through logic.</p>
+    <p>And a bunch of things I didn’t even think about until I needed them. This was my first time coding anything game related, and I’ve gained a new appreciation for how hard it is to define, explain, and enforce rules through logic.</p>
 
     <h2>Using MUI</h2>
     <p>Material UI turned out to be a great tool for this kind of project:</p>
@@ -73,30 +73,30 @@ export const phase10Tracker = {
     <h2>Code Highlight: Medal Assignment</h2>
     <p>One of the more satisfying pieces to write was this medal function. It ranks players and assigns gold, silver, bronze (and even a wooden spoon) based on current scores and phases.</p>
 
-    <pre><code>{\`
+    <pre><code>
     // Assign medals based on final rankings if winner is declared
     function assignMedals(rankedPlayers, winnerDeclared) {
-      const medals = Array(rankedPlayers.length).fill(null);
-      if (!winnerDeclared) return medals;
+    const medals = Array(rankedPlayers.length).fill(null);
+    if (!winnerDeclared) return medals;
 
-      let rank = 1;
-      for (let i = 0; i < rankedPlayers.length; i++) {
+    let rank = 1;
+    for (let i = 0; i < rankedPlayers.length; i++) {
         if (i > 0) {
-          const prev = rankedPlayers[i - 1];
-          const curr = rankedPlayers[i];
-          if (curr.phase !== prev.phase || curr.score !== prev.score) {
+        const prev = rankedPlayers[i - 1];
+        const curr = rankedPlayers[i];
+        if (curr.phase !== prev.phase || curr.score !== prev.score) {
             rank = i + 1;
-          }
+        }
         }
 
         if (rank === 1) medals[i] = '🥇';
         else if (rank === 2) medals[i] = '🥈';
         else if (rank === 3) medals[i] = '🥉';
-      }
-
-      return medals;
     }
-    \`}</code></pre>
+
+    return medals;
+    }
+    </code></pre>
 
     <p>Simple, readable, and a nice reward system to cap off the game.</p>
 
@@ -107,7 +107,7 @@ export const phase10Tracker = {
 
     <h2>Lessons Learned</h2>
     <ul>
-      <li>Games are logic-heavy, even casual ones</li>
+      <li>Games are logic heavy, even casual ones</li>
       <li>MUI is brilliant for speed, but styling and logic should be separated early</li>
       <li>One day builds often snowball, but that’s not a bad thing</li>
     </ul>

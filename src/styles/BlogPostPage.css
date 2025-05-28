@@ -71,7 +71,7 @@
   padding: 2px 6px;
   border-radius: var(--space-xs);
   white-space: nowrap;
-  animation: fadeInOut 2s ease-in-out; 
+  animation: fadeInOut 2s ease-in-out;
 }
 
 @keyframes fadeInOut {
@@ -141,6 +141,28 @@
   font-family: var(--font-body);
 }
 
+.blog-post-body pre {
+  background-color: var(--code-background);
+  color: var(--code-text);
+  padding: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  border-radius: var(--space-xs);
+  max-width: 100%;
+  box-shadow: 0 0 0 1px var(--code-border);
+  white-space: pre-wrap;
+  overflow-x: auto;
+  margin: var(--space-md) 0;
+  word-break: break-word;         /* NEW */
+  overflow-wrap: break-word;      /* NEW */
+  box-sizing: border-box;         /* NEW - ensures max-width is enforced */
+}
+
+.blog-post-body code {
+  font-family: var(--font-mono);
+}
+
+/* === Not Found Message === */
 .not-found-message {
   text-align: center;
   padding: var(--space-lg);
@@ -148,28 +170,56 @@
   color: var(--text-secondary);
 }
 
-/* Tablet and Below: ≤1200px */
+/* === Responsive (Tablet & Below) === */
 @media (max-width: 1200px) {
   .sticky-share-bar {
     position: fixed !important;
-    top: var(--space-xxl);               
-    right: var(--space-lg); 
+    top: var(--space-xxl);
+    right: var(--space-lg);
     left: auto;
     margin: 0;
     z-index: 999;
     background-color: transparent;
     box-shadow: none;
   }
-  
+
   .share-menu {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
     margin-top: var(--space-sm);
-    background-color: var(--background-colour); 
-    padding: var(--space-sm);                   
-    border-radius: var(--space-xs);            
-    box-shadow: var(--text-primary);    
+    background-color: var(--background-colour);
+    padding: var(--space-sm);
+    border-radius: var(--space-xs);
+    box-shadow: var(--text-primary);
+  }
+}
+
+@media (max-width: 350px) {
+  .blog-post-page-container {
+    flex-direction: column;
+    padding: var(--space-md); /* slightly tighter but with horizontal breathing room */
+    gap: var(--space-md);
   }
 
+  .blog-post {
+    padding: 0 var(--space-sm); /* ensures paragraphs aren’t flush with screen edge */
+  }
+
+  .blog-post-body h2,
+  .blog-post-body h3,
+  .blog-post-body p,
+  .blog-post-body li {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  .blog-post-body pre {
+    font-size: 1rem;
+    padding: var(--space-sm);
+  }
+
+  .sticky-share-bar {
+    display: none; /* optional: hide share bar on ultra-small screens */
+  }
 }
