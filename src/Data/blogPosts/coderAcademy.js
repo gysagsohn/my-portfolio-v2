@@ -112,7 +112,7 @@ export const coderAcademy = {
       <li>Network early</li>
       <li>Pick a course that suits your life</li>
     </ul>
-    <p>It also gave me the foundation I needed to actually call myself a coder not just someone who’s learning to code. I now have the skills, the knowledge, and more importantly, the ability to figure things out. That means I can keep building, solving, and improving, and keep getting better. There’s still a lot to learn, but now I know how to keep learning.</p>
+    <p>It also gave me the foundation I needed to actually call myself a coder not just someone who’s learning to code. I now have the skills, the knowledge, and more importantly, the ability to figure things out. That means I can keep building, solving, and improving. There’s still a lot to learn, but now I know how to keep learning.</p>
     <p>To my fellow students and the educators who made this possible thank you. You made it less lonely, more human, and absolutely worth it.</p>
   `
 };
