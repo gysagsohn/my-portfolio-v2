@@ -162,6 +162,17 @@
   font-family: var(--font-mono);
 }
 
+.blog-post-body a {
+  color: var(--link-colour);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.blog-post-body a:hover {
+  color: var(--link-hover);
+}
+
+
 /* === Not Found Message === */
 .not-found-message {
   text-align: center;

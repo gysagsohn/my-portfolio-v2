@@ -41,6 +41,9 @@
   --code-text: #D4D4D4;
   --code-border: #333333;
   --code-header: #252526;
+
+  --link-colour: #5A4EBA;
+  --link-hover: #FFB20F;
 }
 
 /* DARK THEM */
@@ -56,6 +59,9 @@ body.dark {
   --code-text: #d4d4d4;
   --code-border: #3c3c3c;
   --code-header: #2c2c2c;
+
+  --link-colour: #FFD700;     /* Gold */
+  --link-hover: #FF8C00;      /* Dark Orange */
 }
 
 /* Optional outline button adjustments in dark mode */
@@ -87,4 +93,10 @@ body.retro {
   --code-text: #00FF00;
   --code-border: #444444;
   --code-header: #222222;
+
+  --link-colour: #00FFFF;     /* Cyan */
+  --link-hover: #FF00FF;      /* Magenta */
+
 }
+
+
