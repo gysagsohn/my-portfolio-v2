@@ -16,7 +16,7 @@ export const gameTracker = {
     <p><em>Game Tracker</em> is a full-stack MERN application that lets friends log and track board & card-game results in one place born from too many nights manually tallying Phase 10, Monopoly Deal, Skip-Bo, and Catan scores on scrap paper.</p>
 
     <h2>Where It Started (Google Keep Tallies)</h2>
-    <p>Before <em>Game Tracker</em>, my friends and I shared a Google Keep note to tally wins and losses — super manual, easy to lose context, and impossible to get stats from. This is the exact itch that turned into the app. Also, yes, I might be a little competitive.</p>
+    <p>Before <em>Game Tracker</em>, my friends and I shared a Google Keep note to tally wins and losses super manual, easy to lose context, and impossible to get stats from. This is the exact itch that turned into the app. Also, yes, I might be a little competitive.</p>
     <div class="inline-screenshot-grid">
       <figure>
         <img src="${keep1}" alt="Shared Google Keep note - overall games tally with multiple titles and scores" />
