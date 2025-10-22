@@ -1,4 +1,7 @@
 import gameTrackerImage from '../../assets/game-tracker-hero-800x418.png';
+import keep1 from '../../assets/keep-tally-1-800.jpg';
+import keep2 from '../../assets/keep-tally-2-800.jpg';
+import keep3 from '../../assets/keep-tally-3-800.jpg';
 
 export const gameTracker = {
   title: "Game Tracker Full-Stack MERN App",
@@ -11,6 +14,23 @@ export const gameTracker = {
   body: `
     <h2>What I Built</h2>
     <p><em>Game Tracker</em> is a full-stack MERN application that lets friends log and track board & card-game results in one place born from too many nights manually tallying Phase 10, Monopoly Deal, Skip-Bo, and Catan scores on scrap paper.</p>
+
+    <h2>Where It Started (Google Keep Tallies)</h2>
+    <p>Before <em>Game Tracker</em>, my friends and I shared a Google Keep note to tally wins and losses — super manual, easy to lose context, and impossible to get stats from. This is the exact itch that turned into the app. Also, yes, I might be a little competitive.</p>
+    <div class="inline-screenshot-grid">
+      <figure>
+        <img src="${keep1}" alt="Shared Google Keep note - overall games tally with multiple titles and scores" />
+        <figcaption>Our shared ‘Games Tally’ note — quick to jot, impossible to analyse.</figcaption>
+      </figure>
+      <figure>
+        <img src="${keep2}" alt="Google Keep note showing head-to-head tally between Sasha and Gy" />
+        <figcaption>Head-to-head tallies (Sasha vs Gy). Still manual.</figcaption>
+      </figure>
+      <figure>
+        <img src="${keep3}" alt="Google Keep note of Monopoly Deal tally between Stephen and Gy" />
+        <figcaption>Lockdown Monopoly Deal scores. Fun, but zero history or insights.</figcaption>
+      </figure>
+    </div>
 
     <p><strong>Live app:</strong> <a href="https://gy-gametracker.netlify.app" target="_blank" rel="noopener">gy-gametracker.netlify.app</a><br/>
     <strong>Repos:</strong> <a href="https://github.com/gysagsohn/game-tracker-client" target="_blank" rel="noopener">Frontend</a> | <a href="https://github.com/gysagsohn/game-tracker-server" target="_blank" rel="noopener">Backend</a></p>

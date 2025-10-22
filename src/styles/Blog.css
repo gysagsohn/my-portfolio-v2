@@ -1,3 +1,4 @@
+
 .blog-page {
   padding: var(--space-lg);
   max-width: 1280px;
@@ -27,6 +28,7 @@
   line-height: 1.6;
 }
 
+
 .blog-tabs {
   display: flex;
   justify-content: center;
@@ -44,14 +46,13 @@
   transition: color 0.2s ease-in-out;
 }
 
-.tab-button:hover {
-  color: var(--accent-button);
-}
+.tab-button:hover { color: var(--accent-button); }
 
 .tab-button.active {
   color: var(--accent-button);
   font-weight: 600;
 }
+
 
 .blog-grid {
   display: grid;
@@ -60,4 +61,3 @@
   justify-items: center;
   padding: var(--space-lg) var(--space-md);
 }
-
