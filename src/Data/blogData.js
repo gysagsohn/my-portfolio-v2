@@ -1,5 +1,6 @@
 import { careerSwitch } from './blogPosts/careerSwitch';
 import { coderAcademy } from './blogPosts/coderAcademy';
+import { docScanLite } from './blogPosts/docScanLite.js';
 import { gameTracker } from './blogPosts/gameTracker.js';
 import { getToKnowMe } from './blogPosts/getToKnowMe';
 import { phase10Tracker } from './blogPosts/phase10Tracker.js';
@@ -13,5 +14,6 @@ export const blogPosts = [
   coderAcademy,
   readyGroupHandbook,
   portfolioV2Launch,
-  phase10Tracker
+  phase10Tracker,
+  docScanLite
 ];

@@ -10,11 +10,19 @@ function Blog() {
   // Track which tab is currently selected
   const [activeTab, setActiveTab] = useState('All');
 
-  // Filter blogPosts based on selected tab
+  // Filter blogPosts based on selected tab and sort by date (most recent first)
   const getFilteredPosts = () => {
-    if (activeTab === 'Blog') return blogPosts.filter(p => p.type !== 'project');
-    if (activeTab === 'Projects') return blogPosts.filter(p => p.type === 'project');
-    return blogPosts;
+    let filtered;
+    if (activeTab === 'Blog') {
+      filtered = blogPosts.filter(p => p.type !== 'project');
+    } else if (activeTab === 'Projects') {
+      filtered = blogPosts.filter(p => p.type === 'project');
+    } else {
+      filtered = blogPosts;
+    }
+    
+    // Sort by date in descending order (most recent first)
+    return filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
   };
 
   return (

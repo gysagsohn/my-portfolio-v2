@@ -101,7 +101,7 @@
 .blog-post-image {
   display: block;
   width: 100%;
-  max-width: 960px;         /* wider hero, still constrained */
+  max-width: 600px;         
   height: auto;
   margin: var(--space-md) auto;
   border-radius: var(--space-sm);
