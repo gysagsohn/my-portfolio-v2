@@ -19,3 +19,16 @@ body {
   padding: var(--space-lg);
 }
 
+@media (max-width: 768px) {
+  #root {
+    padding: var(--space-md) var(--space-sm); 
+  }
+}
+
+@media (max-width: 400px) {
+  #root {
+    padding: var(--space-sm) var(--space-xs); 
+  }
+}
+
+
