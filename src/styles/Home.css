@@ -174,15 +174,13 @@
   min-width: 300px;
 }
 
-
-
 /* === BLOG CARDS === */
 .preview-column {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: var(--space-md);
-  margin-bottom: var(--space--xxl); 
+  margin-bottom: var(--space-xxl);
 }
 
 .preview-column .post-card {
@@ -193,7 +191,7 @@
 
 /* === ABOUT SECTION === */
 .about-section {
-  margin-top: var(--space-xxl);  
+  margin-top: var(--space-xxl);
   margin-bottom: var(--space-xl);
   padding: var(--space-md);
   background-color: var(--background-colour);
@@ -212,14 +210,14 @@
   font-family: var(--font-heading);
   text-align: center;
   color: var(--text-secondary);
-  margin-bottom: 0.25rem; 
+  margin-bottom: 0.25rem;
 }
 
 .about-text.intro-line {
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
-  margin-bottom: var(--space-sm); 
+  margin-bottom: var(--space-sm);
 }
 
 .about-text {
@@ -240,16 +238,16 @@
 .about-cta-highlight {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--accent-button); /* Amber Gold */
+  color: var(--accent-button);
   text-align: center;
   margin-bottom: var(--space-md);
   font-family: var(--font-heading);
 }
 
-
 /* === SKILLS SECTION === */
 .skills-section {
-  margin-top: var(--space--xxl);
+  /* Fixed typo: was --space--xxl (double dash), which is an undefined variable */
+  margin-top: var(--space-xxl);
   margin-bottom: var(--space-xl);
   padding: var(--space-md);
   background-color: var(--background-colour);
@@ -272,18 +270,17 @@
   margin-bottom: var(--space-md);
 }
 
-
 .timeline-column .section-heading {
   text-align: left;
   margin-left: 250px;
 }
 
-/* === SYNTAX HIGHLIGHTING === */
+/* === SYNTAX HIGHLIGHTING (terminal box) === */
 .code-keyword { color: #569CD6; }
 .code-variable { color: #9CDCFE; }
-.code-class { color: #4EC9B0; }
-.code-method { color: #DCDCAA; }
-.code-string { color: #CE9178; }
+.code-class    { color: #4EC9B0; }
+.code-method   { color: #DCDCAA; }
+.code-string   { color: #CE9178; }
 
 @media (max-width: 1200px) {
   .timeline-column .section-heading {

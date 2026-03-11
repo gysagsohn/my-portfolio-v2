@@ -161,7 +161,7 @@
 /* Styling for phones and small screens */
 @media (max-width: 500px) {
 
-  /* Shrink hero image (NOTE: class has typo 'hero-i50mage') */
+  /* Shrink hero image */
   .hero-image {
     width: 240px;
     height: 240px;
@@ -184,9 +184,9 @@
   .terminal-box {
     max-width: 90%;
     min-height: 250px;
-    white-space: pre-wrap;       
-    word-break: break-word;      
-    overflow-wrap: break-word;   
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   /* Center subheading */
